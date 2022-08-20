@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFood</title>
+</head>
+
+<body>
+    <h2>Peça sua pizza por aqui</h2>
+    <p>Digite o sabor da pizza: </p>
+    <input type="text" id="ipt_sabor"><br>
+
+    <p>Digite o preço que deseja pagar: </p>
+    <input type="text" id="ipt_preco"><br>
+
+    <p>Digite o com quantas pessoas vai dividir a conta: </p>
+    <input type="text" id="ipt_rachar"><br>
+    <button onclick="pedir()">Pedir Pizza</button> <br><br>
+
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+<script>
+    function pedir() {
+        var preco = Number(ipt_preco.value);
+        var rachar = Number(ipt_rachar.value);
+        var conta = preco / rachar
+
+        resultado.innerHTML = `A pizza de ${ipt_sabor.value} custa R$${preco} e cada amigo vai pagar R$${conta}`
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de médias</title>
+</head>
+
+<body>
+    <h2>Calcule sua media e saiba se passa de ano</h2>
+    <p>Digite a nota1:</p>
+    <input type="text" id="ipt_nota1"><br>
+
+    <p>Digite a nota2:</p>
+    <input type="text" id="ipt_nota2"><br>
+    <button onclick="calcular()">Calcular</button> <br><br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular(){
+        var nota1 = Number(ipt_nota1.value);
+        var nota2 = Number(ipt_nota2.value);
+        var media = (nota1 + nota2) / 2;
+
+        resultado.innerHTML = `Sua média foi de ${media}`
+    }
+</script>
