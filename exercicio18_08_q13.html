@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular CLT</title>
+</head>
+<body>
+    <h2>Saiba seu salario depois dos descontos CLT</h2>
+    Digite seu salario bruto: <input type="text" id="salario_bruto"><br>
+    <button onclick="calcular()">Calcular Salario</button>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var salario_cheio = Number(salario_bruto.value);
+        var previdencia = salario_cheio * 0.1;
+        var renda = salario_cheio * 0.2;
+        var sindical = salario_cheio / 30;
+        var salario_desconto = salario_cheio - previdencia - renda - sindical;
+        alert(`Apesar de seu salario bruto ser R$${salario_cheio}, apos os descontos, voce recebera somente R$${salario_desconto}`)
+    }
+    /*
+    function calcular(){
+        alert(`Apesar de seu bruto ser R$${salario_bruto.value}, após os descontos, você receberá somente R$${Number(salario_bruto.value) - 
+            Number(salario_bruto.value) * 0.1 - Number(salario_bruto.value) * 0.2 - Number(salario_bruto.value) / 30}`)
+    }*/
+</script>

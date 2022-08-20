@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h2>Calculadora simples</h2>
+    Digite um número: <input type="text" id="in_n1"><br>
+    Digite outro número: <input type="text" id="in_n2"><br>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function somar(){
+        resultado.innerHTML = `A soma entre ${in_n1.value} e ${in_n2.value} é ${Number(in_n1.value) + Number(in_n2.value)}`
+    }
+
+    function subtrair(){
+        resultado.innerHTML = `A subtração entre ${in_n1.value} e ${in_n2.value} é ${Number(in_n1.value) - Number(in_n2.value)}`
+    }
+
+    function multiplicar(){
+        resultado.innerHTML = `A multiplicação de ${in_n1.value} por ${in_n2.value} é ${Number(in_n1.value) * Number(in_n2.value)}`
+    }
+
+    function dividir(){
+        resultado.innerHTML = `A divisão de ${in_n1.value} por ${in_n2.value} é ${Number(in_n1.value) / Number(in_n2.value)}`
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+    <h2>Peça sua Pizza</h2>
+    Digite o sabor: <input type="text" id="in_sabor"><br>
+    Digite o preço que deseja: <input type="text" id="in_preco"><br>
+    Vai dividir com quantas pessoas? <input type="text" id="in_rachar"><br>
+    <button onclick="resultado()">Gerar Pedido</button>
+    <div id="in_detalhes"></div>
+</body>
+</html>
+<script>
+
+    function resultado(){
+        in_detalhes.innerHTML = `A pizza de ${in_sabor.value} custa R$ ${in_preco.value} e cada amigo vai pagar R$ 
+        ${Number(in_preco.value) / Number(in_rachar.value)}`
+    }
+
+</script>

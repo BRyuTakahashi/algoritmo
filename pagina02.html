@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda pagina HTML</title>
+</head>
+<body>
+
+<!-- isso eh um comentario no html-->
+    Fale me de seu heroi favorito
+    <br><br>
+    Nome: <input id="in_heroi"><br>
+    Poder <input id="in_poder"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        alert(in_heroi.value)
+        alert(in_poder.value)
+        alert(`Cadastrando novo heroi: ${in_heroi.value}`)
+        alert(`Cadastrando poder do heroi ${in_heroi.value}: ${in_poder.value}`)
+        // alert('Cadastrando novo heroi: ' + in_heroi.value)
+        // alert('Cadastrando poder do heroi ' + in_heroi.value + ': ' + in_poder.value)
+    }
+
+</script>

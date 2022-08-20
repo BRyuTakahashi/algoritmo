@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete Unico</title>
+</head>
+<body>
+    
+    <h2>Calcule quanto reais economizará com o Bilhete Unico de Estudante</h2>
+    Qual o valor da passagem? <input type="text" id="passagem_valor"><br>
+    Quantas viagens faz por mês? <input type="text" id="passagem_qnt"><br>
+    <button onclick="calcular()">Ver economia</button>
+
+</body>
+</html>
+<script>
+    function calcular(){
+        alert(`Você economizará R$ ${Number(passagem_qnt.value) * Number(passagem_valor.value) / 2} por mês`)
+    }
+</script>

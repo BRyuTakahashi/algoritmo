@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+
+    <h2>Quanto tempo falta para eu me aposentar?</h2>
+    Digite sua idade: <input type="text" id="in_idade"><br>
+    Selecione o botao conforme seu genero <br>
+
+    <button onclick="aposentadoria_homem()">Aposentadoria Homem</button>
+    <button onclick="aposentadoria_mulher()">Aposentadoria Mulher</button>
+</body>
+</html>
+<script>
+    function aposentadoria_homem(){
+        alert (`Você é homem, faltam ${70 - Number(in_idade.value)} anos para poder se aposentar`)
+    }
+
+    function aposentadoria_mulher(){
+        alert (`Você é mulher, faltam ${60 - Number(in_idade.value)} anos para poder se aposentar`)
+    }
+</script>

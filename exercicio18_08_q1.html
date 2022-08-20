@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Querido Diario</title>
+</head>
+<body>
+    <h2>Meu Querido Diario</h2>
+    <br>
+    Digite uma memoria pro seu diario: <input id="memoria" type="text">
+    <br>
+    <button onclick="registrar_memoria()">Cadastrar</button>
+    <div id="registro"></div>
+
+</body>
+</html>
+
+<script>
+    function registrar_memoria(){
+        registro.innerHTML += `<br> ${memoria.value}`
+        memoria.value = ''
+    }
+</script>

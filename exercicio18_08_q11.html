@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingressos.com</title>
+</head>
+<body>
+    <h2>Saiba quanto arrecadou</h2>
+
+    Quantos ingressos de estudante vendeu? <input type="text" id="ingresso_estudante"><br>
+    Quantos ingressos comuns vendeu? <input type="text" id="ingresso_comum"><br>
+    Quanto custa cada ingresso? <input type="text" id="ingresso_preco"><br>
+    
+    <button onclick="arrecadar()">Calcular arrecadação</button>
+</body>
+</html>
+
+<script>
+    function arrecadar(){
+        alert (`A arrecadação foi de R$ ${Number(ingresso_preco.value) / 2 * Number(ingresso_estudante.value) + Number(ingresso_comum.value) * Number(ingresso_preco.value)}`)
+    }
+</script>

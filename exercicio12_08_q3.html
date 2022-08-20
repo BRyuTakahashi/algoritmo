@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Faca seu pedido <br><br>
+    Sabor da pizza: <input type="text" id="in_sabor"><br>
+    Preco sugerido: <input type="text" id="in_preco"><br>
+    Tempo de entrega desejado: <input type="text" id="in_tempo"><br>
+    <button onclick="pedir()">Pedir pizza!</button>
+    <div id="dados_pedido">
+        Confirme os dados do pedido aqui
+    </div>
+</body>
+</html>
+
+<script>
+    function pedir(){
+        dados_pedido.innerHTML = `A pizza de ${in_sabor.value}, que custou R$${in_preco.value} chegara em ${in_tempo.value} minutos`
+    }
+</script>

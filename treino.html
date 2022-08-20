@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    digitando diretamente entre os codigos body <br>
+    <br>
+    <button onclick="in_alert()">Alert</button>
+    <br><br><br>
+
+    <div id="div_mudar">outra forma de exibir os texto eh usando a tag div, pense nela como uma caixa de vidro</div>
+    <br>
+    <button onclick="mudar_div()">mudar texto da div</button>
+</body>
+</html>
+
+<script>
+
+    alert('existem varias formas de mostrar textos')
+
+    function in_alert(){
+        alert('usando o alert, um texto sera exibido no formato de pop-up')
+    }
+
+    function mudar_div(){
+        div_mudar.innerHTML = 'usando inner.HTML eh possivel mudar um conteudo dentro do html tendo uma id'
+    }
+    
+</script>
