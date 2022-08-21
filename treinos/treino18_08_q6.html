@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpTrans</title>
+</head>
+
+<body>
+    <h2>Saiba quanto ira economizar ao mes com o Bilhete Unico de Estudante</h2>
+    <p>Digite quanto esta custando a passagem</p>
+    <input type="text" id="ipt_preco"><br>
+    <p>Quantas viagens vc faz por dia?</p>
+    <input type="text" id="ipt_viagens"><br>
+    <button onclick="calcular()">Ver economia</button>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var preco = Number(ipt_preco.value);
+        var viagens = Number(ipt_viagens.value);
+        var eco_dia = viagens * preco / 2;
+        var eco_mes = viagens * 30 * preco / 2;
+
+        alert(`Voce economizara R$${eco_dia}, portanto em um mes a sua economia sera de R$${eco_mes}`)
+    }
+</script>

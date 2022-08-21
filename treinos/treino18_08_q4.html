@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Aposentadoria</title>
 </head>
+
 <body>
-    
+    <h2>Saiba quantos anos faltam para se aposentar</h2>
+    <p>Digite sua idade:</p>
+    <input type="text" id="ipt_idade"><br><br>
+    <p>Voce eh homem ou mulher?</p>
+    <button onclick="calcular_homem()">Homem</button>
+    <button onclick="calcular_mulher()">Mulher</button>
+
 </body>
+
 </html>
+
+<script>
+    function calcular_homem() {
+        var idade = Number(ipt_idade.value);
+        var aposentadoria = 70 - idade;
+        alert(`Voce eh homem, portanto faltam ${aposentadoria}`);
+    }
+
+    function calcular_mulher() {
+        var idade = Number(ipt_idade.value);
+        var aposentadoria = 60 - idade;
+        alert(`Voce eh mulher, portanto faltam ${aposentadoria}`);
+    }
+
+</script>

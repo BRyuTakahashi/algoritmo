@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpTech</title>
+</head>
+
+<body>
+    <h2>Saiba sua media na faculdade SpTech</h2>
+    <p>Qual o seu nome?</p>
+    <input type="text" id="ipt_nome">
+
+    <p>Digite sua nota na prova continuada:</p>
+    <input type="text" id="ipt_continuada">
+
+    <p>Digite sua nota na prova semestral:</p>
+    <input type="text" id="ipt_semestral"><br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var nt_continuada = Number(ipt_continuada.value);
+        var media_continuada = nt_continuada * 0.4;
+        var nt_semestral = Number(ipt_semestral.value);
+        var media_semestral = nt_semestral * 0.6;
+        var media_total = media_continuada + media_semestral;
+        resultado.innerHTML = `A média de ${ipt_nome.value} será de ${media_total}` 
+    }
+</script>

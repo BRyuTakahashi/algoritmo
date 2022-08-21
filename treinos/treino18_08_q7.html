@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z</title>
+</head>
+<body>
+    <h2>Saiba quanto de Ki vc teria se fosse um Sayajin</h2>
+    <p>Digite seu nome de guerreiro:</p>
+    <input type="text" id="ipt_nome"><br>
+    
+    <p>Digite quanto de Ki vc teria:</p>
+    <input type="text" id="ipt_ki"><br>
+    <button onclick="calcular()">Calcular</button>
+
+</body>
+</html>
+<script>
+    function calcular(){
+        var ki = Number(ipt_ki.value);
+        var sayajin2 = ki * 50;
+        var sayajin3 = ki * 100;
+        alert(`O Sayajin ${ipt_nome.value} na forma Super Sayajin teria ${sayajin2} de Ki`)
+        alert(`O Sayajin ${ipt_nome.value} na forma Super Sayajin2 teria ${sayajin3} de Ki`)
+    }
+</script>
