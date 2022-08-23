@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    Digite seu nome de guerreiro: <br>
+    <input type="text" id="ipt_nome"><br><br>
+    Digite o seu Ki: <br>
+    <input type="text" id="ipt_ki"><br><br>
+    <button onclick="calcular()">Calcular Ki</button>
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        alert(`O guerreiro ${ipt_nome.value} na forma super Sayajin teria ${Number(ipt_ki.value) * 50}`);
+        alert(`O guerreiro ${ipt_nome.value} na forma super Sayajin 2 teria ${Number(ipt_ki.value) * 100}`);
+    }
+</script>
