@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletroPaulo</title>
+</head>
+
+<body>
+    <h2>Saiba quanto você gasta em eletricidade</h2>
+
+    <p>Digite quantos kWh você consome ao mês</p>
+    <input type="text" id="ipt_kwh"><br>
+    <button onclick="calcular()">Calcular conta de luz</button>
+</body>
+
+</html>
+<script>
+    function calcular(){
+        var kwh = Number(ipt_kwh.value);
+        var consumo = kwh * 0.85;
+
+        if (kwh < 100){
+            consumo = consumo * 0.9;
+        }
+        alert (`Você consome ${kwh}kWh ao mes, entao seus gasto é de R$${consumo}`)
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMS</title>
+</head>
+
+<body>
+    <h2>Saiba quanto de refrigerante bebe em 1 ano</h2>
+    <p>Digite quantas latinhas bebe ao dia:</p>
+    <input type="text" id="ipt_latinhas">
+    <button onclick="calcular()">Quantos refris?</button>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var refris = Number(ipt_latinhas.value);
+        var total_refris = refris * 365;
+        alert(`Voce consome ${total_refris} ao ano`);
+        if (total_refris >= 500) {
+            alert(`Voce consome muito refrigerante. Cuidado com a diabetes!!!`);
+        }
+    }
+</script>

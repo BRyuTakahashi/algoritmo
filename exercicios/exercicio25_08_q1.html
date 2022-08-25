@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorias</title>
+</head>
+
+<body>
+    <h2>Calcule quantas calorias voce consome ao dia</h2>
+    <p>Digite seu nome:</p>
+    <input type="text" id="ipt_nome"> <br>
+    <p>A cada alimento consumido, digite quantas calorias o alimento consumido tinha:</p>
+    <input type="text" id="ipt_calorias"><br>
+    <button onclick="adicionar_calorias()">Acrescentar Calorias</button><br><br>
+
+    <p>Ao final do dia, selecione o botao que corresponde as calorias consumidas no dia</p>
+    <button onclick="poucas_calorias()">-1300kcal</button>
+    <button onclick="normal_calorias()">+1300kcal</button>
+    <button onclick="muitas_calorias()">+2500kcal</button>
+
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function adicionar_calorias() {
+        var calorias = Number(ipt_calorias.value);
+        ipt_calorias.innerHTML = '';
+        resultado.innerHTML += `<br> ${calorias}`;
+
+    }
+
+    function poucas_calorias(){
+        alert(`${ipt_nome.value}, acho que faltam um pouco de calorias ai`);
+    }
+    function normal_calorias(){
+        alert(`${ipt_nome.value}, voce esta comendo na medida`);
+    }
+    function muitas_calorias(){
+        alert(`${ipt_nome.value}, voce com certeza é bodybuilder`);
+    }
+
+</script>

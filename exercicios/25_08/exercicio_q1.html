@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa?</title>
+</head>
+
+<body>
+    <h2>Saiba se voce tem idade para ir na festa</h2>
+    <p>Digite sua idade:</p>
+    <input type="text" id="ipt_idade"><br>
+    <button onclick="confirmar()">Ir para a festa</button>
+</body>
+
+</html>
+
+<script>
+    function confirmar(){
+        var idade = Number(ipt_idade.value);
+        if (idade < 18){
+            alert(`Pedir permissao para o responsavel`)
+        }
+        alert(`#partiuFesta`);
+    }
+</script>

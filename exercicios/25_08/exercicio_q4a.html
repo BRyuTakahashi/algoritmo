@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Pizza</title>
+</head>
+
+<body>
+    <h2>Saiba quanto você e seus amigos vão pagar pelas pizzas</h2>
+
+    <p>Digite o custo total das pizzas:</p>
+    <input type="text" id="ipt_preco"><br>
+
+    <p>Vão dividir em quantas pessoas?</p>
+    <input type="text" id="ipt_qnt_amigos"><br>
+    <button onclick="rola_pizza()">Rola a Pizza?</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function rola_pizza(){
+        var preco = Number(ipt_preco.value);
+        var amigos = Number(ipt_qnt_amigos.value);
+        var rachar = preco / amigos;
+
+        resultado.innerHTML = `Vocês estão em ${amigos} pessoas, então cada um vai pagar R$${rachar}.`
+
+        if (rachar > 20.00){
+            resultado.innerHTML += `<br> <font color = blue> <strong> <i> Deu Ruim! Pizza muito cara!</i></strong>`
+        }
+    }
+</script>
