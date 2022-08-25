@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLevador</title>
+</head>
+
+<body>
+    <p>Digite o peso atual do elevador:</p>
+    <input type="text" id="ipt_peso">
+    <button onclick="mover()">Ligar Elevador</button><br><br>
+</body>
+
+</html>
+
+<script>
+    function mover(){
+        var peso = Number(ipt_peso.value);
+        if (peso < 500){
+            alert(`Elevador vai se mover`);
+        }
+        if (peso >= 500){
+            alert(`Alguém precisa descer do elvador!`);
+        }
+    }
+</script>

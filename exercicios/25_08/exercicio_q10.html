@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuBank</title>
+</head>
+
+<body>
+    <p>Qual o seu saldo na sua conta?</p>
+    <input type="text" id="ipt_saldo"><br>
+    <button onclick="verificar()">Verificar Finanças</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        var saldo = Number(ipt_saldo.value);
+
+        if (saldo == 0) {
+            resultado.innerHTML = `Conta zerada`
+        }
+
+        if (saldo > 0) {
+            resultado.innerHTML = `<font color = blue> Saldo positivo 😉`
+        }
+
+        if (saldo < 0) {
+            resultado.innerHTML = `<font color = red> Está devendo!`
+        }
+    }
+</script>

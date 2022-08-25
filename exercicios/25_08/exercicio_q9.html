@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netfix</title>
+</head>
+
+<body>
+    <h2>Saiba quanto tempo você gasta em serviços de <i>Streaming</i></h2>
+
+    <p>Qual a ultima serie SITCOM que você assistiu?</p>
+    <input type="text" id="ipt_sitcom"><br>
+
+    <p>Quanto episodios você ja assistiu?</p>
+    <input type="text" id="ipt_episodios"><br>
+    <button onclick="verificar()">Verificar nivel</button><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var serie = ipt_sitcom.value;
+        var episodios = Number(ipt_episodios.value);
+        var tmp_assistido = (episodios * 22);
+
+        resultado.innerHTML = `Vejo que você gosta da serie ${serie}, já que ficou ${tmp_assistido} minutos ou ${tmp_assistido / 60} horas   assistindo.`
+
+        // convertendo 30 horas para minutos, seriam 1800 minutos
+        if (tmp_assistido > 1800){
+            resultado.innerHTML += `<br> UAU, você realmente gosta dessa série!`
+        }
+    }
+</script>

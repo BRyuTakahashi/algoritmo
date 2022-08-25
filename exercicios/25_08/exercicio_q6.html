@@ -14,5 +14,22 @@
     
     <p>Digite o valor da prestação:</p>
     <input type="text" id="ipt_prestacao"><br>
+
+    <button onclick="verificar()">Verificar financiamento</button><br><br>
+
+    <div id="resultado"></div>
 </body>
 </html>
+<script>
+    function verificar(){
+        var renda = Number(ipt_renda_familiar.value);
+        var prestacao = Number(ipt_prestacao.value);
+        var financiamento = renda / prestacao * 100;
+
+        resultado.innerHTML = `A prestação corresponde a ${financiamento}%  da renda familiar`
+
+        if (financiamento < 30){
+            resultado.innerHTML += `<br> <font color = red> <strong> Sera necessário complementar a renda familiar </strong>`
+        }
+    }
+</script>
