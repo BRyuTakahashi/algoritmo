@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h2>Calcule dois numeros quaisquer</h2>
+    <p>Digite um numero:</p>
+    <input type="text" id="ipt_n1">
+
+    <p>Digite outro numero:</p>
+    <input type="text" id="ipt_n2"><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function somar() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var somar = n1 + n2;
+        resultado.innerHTML = `A soma entre ${n1} e ${n2} eh ${somar}`;
+    }
+    function subtrair() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var subtrair = n1 - n2;
+        resultado.innerHTML = `A subtracao entre ${n1} e ${n2} eh ${subtrair}`;
+    }
+    function multiplicar() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var multiplicar = n1 * n2;
+        resultado.innerHTML = `A multiplicacao entre ${n1} e ${n2} eh ${multiplicar}`;
+    }
+    function dividir() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var dividir = n1 / n2;
+        resultado.innerHTML = `A divisao de ${n1} para ${n2} eh ${dividir}`;
+    }
+</script>
