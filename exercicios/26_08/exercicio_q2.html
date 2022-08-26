@@ -7,6 +7,29 @@
     <title>Banco Itado</title>
 </head>
 <body>
+    <h2>Saiba se você tem direito ao cheque especial</h2>
+
+    <p>Digite o saldo da sua conta:</p>
+    <input type="text" id="ipt_saldo"><br>
     
+    <p>Digite o debido da sua conta:</p>
+    <input type="text" id="ipt_debito"><br>
+    <button onclick="analisar()">Analisar conta</button><br><br>
+
+    <div id="div_resultado"></div>
 </body>
 </html>
+
+<script>
+    function analisar(){
+        var saldo = Number(ipt_saldo.value);
+        var debito = Number(ipt_debito.value);
+        var conta = saldo - debito;
+
+        if (conta < 0){
+            div_resultado.innerHTML = `<strong> <font color = red> O saldo atual da conta corrente é R$${conta} </strong>`
+        } else {
+            div_resultado.innerHTML = `<i> <font color = blue> O saldo atual da conta corrente é R$${conta} <i>`
+        }
+    }
+</script>

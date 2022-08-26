@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpTech</title>
+</head>
+
+<style>
+    .turista{
+        width: 300px;
+        height: auto;
+    }
+    .aluno{
+        width: 300px;
+        height: auto;
+    }
+</style>
+
+<body>
+    <h2>Saiba que tipo de aluno você é baseado nas sua frequências</h2>
+
+    <p>Digite sua frequência:</p>
+    <input type="text" id="ipt_frequencia"><br>
+    <button onclick="analisar()">Analisar frequência</button><br><br>
+
+    <!--<img src="" alt="">-->
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar(){
+        var frequencia = Number(ipt_frequencia.value);
+        if (frequencia < 50){
+            div_resultado.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/turista-que-corre-rapido_1368-7021.jpg?w=2000" alt="imagem de um turista" class="turista">`
+        } else {
+            div_resultado.innerHTML = `<img src="https://horario.com.br/wp-content/uploads/2019/09/01_geha_blog_enem.jpg" alt="aluno estudando" class="aluno">`
+        }
+    }
+</script>

@@ -1,0 +1,34 @@
+<!--referente ao exercicio 5-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletroPaulo</title>
+</head>
+
+<body>
+    <h2>Saiba quanto você gasta em energia</h2>
+
+    <p>Quantos kWh você gasta por mês?</p>
+    <input type="text" id="ipt_kwhgasto"><br>
+    <button onclick="calcular()">Calcular conta de luz</button>
+
+</body>
+
+</html>
+<script>
+    function calcular(){
+        var kwh_gasto = Number(ipt_kwhgasto.value);
+        var conta = kwh_gasto * 0.85;
+
+        if (kwh_gasto < 100){
+            conta = conta * 0.9;
+            alert(`Sua conta de energia é de R$${conta}`);
+        } else{
+            alert(`Sua conta de energia é de R$${conta}`)
+        }
+    }
+</script>

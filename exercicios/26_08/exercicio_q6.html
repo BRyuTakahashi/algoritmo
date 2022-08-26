@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo</title>
+</head>
+
+<style>
+    .alimento_apropriado{
+        width: 300px;
+        height: auto;
+    }
+    .alimento_estragado{
+        width: 300px;
+        height: auto;
+    }
+</style>
+
+<body>
+    <h2>Verifique se a temperatura é adequada para a cnservação de alimentos</h2>
+
+    <p>Digite a temperatura do ambiente:</p>
+    <input type="text" id="ipt_temperatura"><br>
+    <button onclick="verificar()">Verificar clima</button><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var temperatura = Number(ipt_temperatura.value);
+
+        if (temperatura < 10){
+            div_resultado.innerHTML = `<img src="https://www.iped.com.br/_upload/content/2015/03/03/identificar-alimentos-bom-estado.jpg" alt="alimentos em bom estado" class="alimento_apropriado">`
+        } else {
+            div_resultado.innerHTML = `<img src="https://www.portalcorreiodoagreste.com.br/uploads/images/2019/01/estabelecimentos-vendem-alimentos-estragados-causando-revolta-da-populacao.jpg" alt="alimentos estragado" class="alimento_estragado">`
+        }
+    }
+</script>
