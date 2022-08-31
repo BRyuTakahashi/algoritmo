@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    Digite seu nome:
+    <input type="text" id="ipt_nome"><br>
+
+    Digite sua idade:
+    <input type="text" id="ipt_idade"><br>
+    <button onclick="verificar()">Verificar Aluno</button><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var idade = Number(ipt_idade.value);
+        if (idade >= 18){
+            div_resultado.innerHTML = `${ipt_nome.value} vamos tirar a CNH?`
+        } else {
+            div_resultado.innerHTML = `${ipt_nome.value} vai jogar PlayStation!`
+        }
+    }
+</script>
