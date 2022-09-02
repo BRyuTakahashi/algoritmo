@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Rac</title>
+</head>
+
+<body>
+    Informe seu nome: <br>
+    <input type="text" id="ipt_nome"> <br><br>
+
+    Que modelo de carro deseja comprar? <br>
+    <input type="text" id="ipt_modelo"> <br><br>
+
+    Qual o valor do carro que deseja comprar? <br>
+    <input type="text" id="ipt_preco"> <br><br>
+
+    Informe o cupom de desconto: <br>
+    <input type="text" id="ipt_cupom"> <br><br>
+
+    <button onclick="comprar()">Efetuar Compra</button> <br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function comprar() {
+        var nome = ipt_nome.value;
+        var modelo = ipt_modelo.value;
+        var preco = ipt_preco.value;
+        var cupom = ipt_cupom.value;
+
+        if (modelo == '') {
+            alert(`Informe o modelo do carro para prosseguir com a compra!`);
+        }
+
+        if (preco < 5000) {
+            alert(`Valor inválido! O carro está barato demais`);
+        }
+
+        if (cupom == 'CARRO_NOVO') {
+
+            alert(`Cupom válido! Desconto de 11% aplicado!`);
+            var precoFinal = preco * 0.89;
+            div_resultado.innerHTML = `<font color = green> <i> Olá, ${nome}! O carro de modelo ${modelo}, de valor padrão R$${preco}, sairá por R$${precoFinal} </i>`
+
+        } else {
+
+            alert(`Cupom inválido! Desconto não será aplicado!`);
+            div_resultado.innerHTML = `<font color = red> <strong> Olá, ${nome}! O carro de modelo ${modelo}, de valor padrão R$${preco}, sairá por R$${preco} </strong>`
+        }
+
+    }
+</script>

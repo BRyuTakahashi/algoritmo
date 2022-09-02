@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Migas</title>
+</head>
+
+<body>
+    Qual o valor por grama de sorvete?<br>
+    <input type="text" id="ipt_valor"> <br><br>
+
+    Qual a pesagem do sorvete?<br>
+    <input type="text" id="ipt_peso"> <br><br>
+
+    <button onclick="calcular()">Calcular custo</button><br>
+
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var valor = Number(ipt_valor.value);
+        var peso = Number(ipt_peso.value);
+        var precoFinal = valor * peso;
+
+        if (precoFinal > 10){
+            alert (`Esse sorvete vai comprometer a mesada`)
+        } else {
+            alert (`Hoje você está maneirando...`)
+        }
+    }
+</script>

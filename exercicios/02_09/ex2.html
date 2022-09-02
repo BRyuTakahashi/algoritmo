@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFinanceira</title>
+</head>
+
+<body>
+    Digite o valor do carro a vista: <br>
+    <input type="text" id="ipt_valor"> <br><br>
+
+    Digite a taxa de juros a.m. (ao mes): <br>
+    <input type="text" id="ipt_juros"> <br><br>
+
+    Digite a quantidade de parcelas: <br>
+    <input type="text" id="ipt_parcelas"> <br><br>
+
+    <button onclick="calcular()">Calcular Preju</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var valor = Number(ipt_valor.value);
+        var juros = Number(ipt_juros.value);
+        var parcelas = Number(ipt_parcelas.value);
+
+        var financiamento =  valor * 1 + (juros / 100) ^ (parcelas - 1);
+        var precoMes = valor * 0.8;
+
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${financiamento}. Após 1 mês, ele já vai valer só R$${precoMes}. 
+        Porque comprou financiado, vai pagar o correspondente a CCCC carros`;
+    }
+</script>

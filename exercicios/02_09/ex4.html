@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Migas</title>
+</head>
+
+<body>
+    Qual o valor por grama de sorvete?<br>
+    <input type="text" id="ipt_valor"> <br><br>
+
+    Qual a pesagem do sorvete?<br>
+    <input type="text" id="ipt_peso"> <br><br>
+
+    Que tipo de cobertura vai colocar? <br>
+    <input type="text" id="ipt_cobertura"> <br><br>
+
+    Que tipo de sorvete?<br>
+    <input type="text" id="ipt_tipo">
+
+    <button onclick="calcular()">Calcular custo</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var valor = Number(ipt_valor.value);
+        var peso = Number(ipt_peso.value);
+        var cobertura = ipt_cobertura.value;
+        var tipo = ipt_tipo.value;
+        var precoFinal
+
+        if (tipo == 'G'){
+            precoFinal = peso * (valor * 1.11);
+        } else {
+            precoFinal = peso * (valor * 0.9);
+        }
+
+        if (cobertura != 'C'){
+            precoFinal = precoFinal + peso * 0.01;
+        }
+
+        if (precoFinal > 10){
+            div_resultado.innerHTML = `<font color = green>O seu sorvete vai custar R$${precoFinal} e vai comprometer a mesada`;
+        } else {
+            div_resultado.innerHTML = `<font color = blue> Hoje você está maneirando hoje, gastou somente R$${precoFinal}`
+        }
+    }
+</script>
