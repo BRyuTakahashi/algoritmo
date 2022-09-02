@@ -29,11 +29,14 @@
         var valor = Number(ipt_valor.value);
         var juros = Number(ipt_juros.value);
         var parcelas = Number(ipt_parcelas.value);
+        var razao = 1 + juros / 100;
 
-        var financiamento =  valor * 1 + (juros / 100) ^ (parcelas - 1);
+        var financiamento =  (valor / parcelas) * razao ^ (parcelas - 1) / (razao - 1);
         var precoMes = valor * 0.8;
 
+        var carrosComprados = financiamento / valor;
+
         div_resultado.innerHTML = `Seu carro vai sair por um total de R$${financiamento}. Após 1 mês, ele já vai valer só R$${precoMes}. 
-        Porque comprou financiado, vai pagar o correspondente a CCCC carros`;
+        Porque comprou financiado, vai pagar o correspondente ${carrosComprados} carros`;
     }
 </script>
