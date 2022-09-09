@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Digite um número</p>
+    <input type="text" id="ipt_n1"><br>
+
+    <p>Digite outro número</p>
+    <input type="text" id="ipt_n2"><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function somar(){
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var resultado = n1 + n2;
+        div_resultado.innerHTML = `${resultado}`;
+    }
+
+    function subtrair(){
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var resultado = n1 - n2;
+        div_resultado.innerHTML = `${resultado}`;
+    }
+    
+    function multiplicar(){
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var resultado = n1 * n2;
+        div_resultado.innerHTML = `${resultado}`;
+    }
+
+    function dividir(){
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var resultado = Number((n1 / n2).toFixed(2));
+        div_resultado.innerHTML = `${resultado}`;
+    }
+
+</script>

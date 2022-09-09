@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Digite seu salário bruto:</p>
+    <input type="text" id="ipt_salario"><br>
+
+    <button onclick="calcular()">Calcular</button><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var salario = Number(ipt_salario.value);
+        var previdencia = salario * 0.1;
+        var renda = salario * 0.2;
+        var sindical = salario / 30;
+        var total = Number((salario - previdencia - renda - sindical).toFixed(2));
+
+        div_resultado.innerHTML = `Apesar de seu bruto ser R$${salario}, após os descontos, você receberá somente R$${total}`;
+    }
+</script>
