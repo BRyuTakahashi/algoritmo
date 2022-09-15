@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>SPMercearia</h2>
+
+    <select id="sel_produtos">
+        <option value="3.50">Leite</option>
+        <option value="1.89">Farinha</option>
+        <option value="6.90">Suco</option>
+        <option value="4.50">Cerveja</option>
+    </select> <br><br>
+
+    <button onclick="resultado()">Ver preço</button>
+</body>
+
+</html>
+
+<script>
+    function resultado(){
+        var produtos = Number(sel_produtos.value).toFixed(2);
+
+        alert(`Isso custa R$${produtos}`);
+    }
+</script>

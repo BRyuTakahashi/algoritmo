@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Teste de saúde</h2>
+    Quantos passos dá por dia?<br>
+    <input type="text" id="ipt_passos" onkeyup="analisar()">
+
+    <div id="div_saude"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar(){
+
+        var passos = Number(ipt_passos.value);
+        var analise = `Você `;
+
+        if(passos < 200){
+        
+            analise += `é MUITO sendentário`;
+        } else if (passos <= 2000) {
+            
+            analise += `é sendentário`;
+        }  else if (passos <= 5000) {
+        
+            analise += `não é sendentário`;
+        }  else {
+        
+            analise += `é quase um atleta`;
+        }
+        div_saude.innerHTML = analise;
+    }
+</script>

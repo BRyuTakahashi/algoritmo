@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Estações do ano</h2>
+    <select id="sel_estacoes" onchange="ver_estacoes()">
+        <option value="http://i.mlcdn.com.br/portaldalu/fotosconteudo/12123.jpg">Verão</option>
+        <option value="https://dicasparaviagens.com.br/wp-content/uploads/2017/03/Outono-Principal.jpg">Outono</option>
+        <option value="https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/inverno-datas-e-caracteristicas.jpg">Inverno</option>
+        <option value="https://static.todamateria.com.br/upload/pr/im/primavera-og.jpg">Primavera</option>
+    </select> <br><br>
+
+    <img src="" id="img_frutas"  style="width: 200px;">
+</body>
+
+</html>
+
+<script>
+    function ver_estacoes(){
+        var estacoes = sel_estacoes.value;
+
+        img_frutas.src = estacoes;
+    }
+</script>

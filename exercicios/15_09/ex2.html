@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Simulador de aposentadoria</h2>
+
+    Digite quantos anos já trabalhou: <br>
+    <input type="text" id="ipt_anosTrabalhados"> <br><br>
+
+    <select id="sel_tipo">
+        <option value="">- Escolha o tipo de empresa que trabalhou -</option>
+        <option value="35">Empresa Pública</option>
+        <option value="40">Empresa Privada</option>
+        <option value="45">Empreendedor</option>
+    </select> <br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var anos = Number(ipt_anosTrabalhados.value);
+        var tipo = Number(sel_tipo.value);
+        var calculo = tipo - anos;
+
+        div_resultado.innerHTML = `Você ainda terá que trabalhar por mais ${calculo} anos para se aposentar`
+    }
+</script>

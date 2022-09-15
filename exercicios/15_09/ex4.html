@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Oração pela Paz</h2>
+
+    <select id="sel_trecho" onchange="ver_trecho()">
+        <option value="">- Selecione o trecho da oração</option>
+        <option value=", que eu leve o Amor">Onde houver Ódio</option>
+        <option value=", que eu leve o Perdão">Onde houver Ofensa</option>
+        <option value=", que eu leve a União">Onde houver Discórdia</option>
+        <option value=", que eu leve a Fé">Onde houver Dúvida</option>
+    </select> <br><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_trecho() {
+        var trecho = sel_trecho.value;
+
+        div_resultado.innerHTML = `${trecho}`
+    }
+</script>

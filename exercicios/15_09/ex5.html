@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Aprenda tabuada</h2>
+
+    <select id="sel_numero" onchange="ver_numero()">
+        <option value="">- Selecione um numero -</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select> <br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_numero(){
+        var numero = Number(sel_numero.value);
+    
+        div_resultado.innerHTML = `${numero} x 1 = ${numero * 1} <br>`;
+        div_resultado.innerHTML += `${numero} x 2 = ${numero * 2} <br>`; 
+        div_resultado.innerHTML += `${numero} x 3 = ${numero * 3} <br>`; 
+        div_resultado.innerHTML += `${numero} x 4 = ${numero * 4} <br>`; 
+        div_resultado.innerHTML += `${numero} x 5 = ${numero * 5} <br>`; 
+        div_resultado.innerHTML += `${numero} x 6 = ${numero * 6} <br>`; 
+        div_resultado.innerHTML += `${numero} x 7 = ${numero * 7} <br>`; 
+        div_resultado.innerHTML += `${numero} x 8 = ${numero * 8} <br>`; 
+        div_resultado.innerHTML += `${numero} x 9 = ${numero * 9} <br>`; 
+        div_resultado.innerHTML += `${numero} x 10 = ${numero * 10} <br>`; 
+    }
+</script>
