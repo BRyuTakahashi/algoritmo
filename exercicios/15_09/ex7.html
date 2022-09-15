@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Times do CBLoiro</h2>
+
+    <select id="sel_escudo">
+        <option value="https://pbs.twimg.com/profile_images/1558537491224854530/BvVvQ4fa_400x400.jpg">PainGaming</option>
+        <option value="https://intz.com.br/wp-content/uploads/2019/10/INTZ_Logo_Principal_2022.png">INTZ</option>
+        <option value="https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/27/RED_Canidslogo_square.png/revision/latest?cb=20210517123605">Red Canids</option>
+        <option value="https://www.ffesportsbr.com.br/wp-content/uploads/2022/07/LOUD-lbff8.png">Loud</option>
+        <option value="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2019/01/logo-kabum.png">Kabum</option>
+    </select><br><br>
+
+    <button onclick="ver_escudo()">Ver Escudo</button>
+
+    <img src="" id="img_escudo" style="width: 350px; height: auto;">
+</body>
+
+</html>
+
+<script>
+    function ver_escudo(){
+        var escudo = sel_escudo.value;
+
+        img_escudo.src = escudo;
+    }
+</script>
