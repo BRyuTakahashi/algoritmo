@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Digite uma temperatura:</p>
+    <input type="text" id="ipt_temp" onkeyup="verificar()"><br><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var temp = 0;
+    var frase = '';
+    
+    function verificar(){
+        frase = `A temperatura é `
+        temp = Number(ipt_temp.value);
+
+        if (temp < 14){
+
+            frase += `Congelante`;
+        } else if (temp <= 21){
+
+            frase += `Com Frio`;
+        } else if (temp <= 24){
+
+            frase += `Confortável`;
+        } else if (temp <= 31){
+
+            frase += `Com calor`;
+        } else {
+
+            frase += `Calor escaldante`;
+        }
+        div_resultado.innerHTML = frase;
+    }
+</script>
