@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite seu salário: <br>
+    <input type="text" id="ipt_salario">
+    <select id="sel_desconto">
+        <option value="0.1">INSS</option>
+        <option value="0.2">IR</option>
+        <option value="0.05">VT</option>
+    </select> <br><br>
+
+    <button onclick="ver_desconto()">Ver Desconto</button><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_desconto(){
+        var salario = ipt_salario.value;
+        var desconto = Number(sel_desconto.value);
+        var resultado = Number((salario * desconto)).toFixed(2);
+        
+        div_resultado.innerHTML = `Valor do desconto: R$${resultado}`;z
+    }
+</script>
