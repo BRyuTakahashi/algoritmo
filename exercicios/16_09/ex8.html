@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Quanto pães você come diariamente?</p>
+    <input type="text" id="ipt_pao"><br><br>
+    
+    <p>Quanto pacotes de bolacha recheada você come diariamente?</p>
+    <input type="text" id="ipt_bolacha"><br><br>
+    
+    <p>Quanto copos de achocolatado você toma diariamente?</p>
+    <input type="text" id="ipt_achocolatado"><br><br>
+
+    <button onclick="verificar()">Verificar Calorias</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var pao = 0;
+    var bolacha = 0;
+    var achocolatado = 0;
+    var calorias = 0;
+    var resultado = ``;
+
+    function verificar(){
+        pao = Number(ipt_pao.value) * 50;
+        bolacha = Number(ipt_bolacha.value) * 80;
+        achocolatado = Number(ipt_achocolatado.value) * 70;
+        calorias = pao + bolacha + achocolatado;
+
+        if (calorias < 200){
+
+            resultado = `Parabéns, vai sair em forma da quarentena`;
+        } else if (calorias < 400){
+
+            resultado = `Cuidado, vai ficar mais fofinho(a) após a quarentena`;
+        } else {
+
+            resultado = `Bom, acho que muitos nçao vão te reconhecer após a quarentena`;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

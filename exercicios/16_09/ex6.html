@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p style="background-color: ; color;"></p>
+
+    <select  id="sel_time">
+        
+        <option value="">- Selecione um Time -</option>
+        <option value="1">Corinthians</option>
+        <option value="2">Palmeiras</option>
+        <option value="3">Santos</option>
+        <option value="4">São Paulo</option>
+
+    </select><br>
+
+    <button onclick="selecionar()">Fale sobre esse time</button><br><br>
+    
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var time = 0;
+    var resultado = ``;
+
+    function selecionar(){
+
+        time = Number(sel_time.value);
+        if (time == 1){
+
+            resultado = `<font color= white> <background color= black> Salve o Corinthians`; 
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

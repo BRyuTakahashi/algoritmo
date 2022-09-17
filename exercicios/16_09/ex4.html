@@ -11,7 +11,33 @@
 <body>
 
     <p>Digite o peso do seu filho:</p>
-    <input type="text" id="ipt_peso">
+    <input type="text" id="ipt_peso" onkeyup="calcular()">
+
+    <div id="div_resultado"></div>
 </body>
 
 </html>
+
+<script>
+    var peso = 0;
+    var resultado = ''
+    function calcular(){
+        peso = ipt_peso.value;
+        resultado = 'Seu filho está '
+        if (peso == 18.3){
+
+            resultado += `com o peso perfeito`;
+        } else if (peso <= 13.5){
+
+            resultado += `abaixo do peso`;
+        } else if (peso <= 21.2){
+
+            resultado += `com peso na média`;
+        } else {
+
+            resultado += `acima do peso`;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

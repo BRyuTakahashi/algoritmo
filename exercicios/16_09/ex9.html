@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Qual a sua meta de economia?</p>
+    <input type="text" id="ipt_meta"><br><br>
+
+    <p>Quanto tem economizado?</p>
+    <input type="text" id="ipt_economia"><br><br>
+
+    <button onclick="analisar()">Analisar Economia</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var meta = 0;
+    var economia = 0;
+    var diferenca = ``;
+    var resultado = ``;
+
+    function analisar(){
+        meta = Number(ipt_meta.value);
+        economia = Number(ipt_economia.value);
+        diferenca = economia - meta;
+
+        if (diferenca == 0){
+
+            resultado = `Parabéns, meta alcançada!`;
+        } else if (diferenca > 0) {
+
+            resultado = `Meta ultrapassada em ${diferenca}`;
+        } else {
+
+            resultado = `Força! Ainda em busca da meta! Falta ${diferenca}`;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>

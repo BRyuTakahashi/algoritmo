@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div_frase">Você já clicou 0 vezes</div><br>
+    <button onclick="contador()">Clica meu</button>
+
+</body>
+
+</html> 
+
+<script>
+    var contagem = 0;
+    
+    function contador(){
+        
+        ++contagem;
+        
+        if (contagem < 5){
+            
+            div_frase.innerHTML += `<br>Dedo fraquinho, hein`;
+        } else if (contagem <=10){
+            
+            div_frase.innerHTML += `<br>Dedo bom, mano` 
+        } else if (contagem <= 15){
+            
+            div_frase.innerHTML += `<br>Gosta de clicar, hein!`
+        } else {
+            
+            div_frase.innerHTML += `<br>Eita dedo nervoso`;
+        }
+        
+        div_frase.innerHTML = `Você já clicou ${contagem} vezes`;
+    }
+</script>

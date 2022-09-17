@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTO</title>
+</head>
+
+<body>
+
+    <p>Digite seu nome:</p>
+    <input type="text" id="ipt_nome"><br>
+    
+    <p>Digite seu saldo:</p>
+    <input type="text" id="ipt_saldo"><br>
+
+    <button onclick="verificar()">Verificar conta</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var nome = ``;
+    var saldo = 0;
+    var resultado = ``;
+
+    function verificar(){
+
+        nome = ipt_nome.value;
+        saldo = Number(ipt_saldo.value);
+        saldo = Number((saldo).toFixed(2));
+
+        if (saldo < 0){
+
+            resultado = `Com o saldo de ${saldo} o cliente ${nome} está com saldo devedor`
+        } else if (saldo < 2000) {
+
+            resultado = `Com o saldo de ${saldo} o cliente ${nome} está com saldo NORMAL`
+        } else if (saldo < 5000){
+
+            resultado = `Com o saldo de ${saldo} o cliente ${nome} está com saldo ACIMA DA MÉDIA`;
+        } else {
+
+            resultado = `Com o saldo de ${saldo} o cliente ${nome} TEM PERFIL DE INVESTIDOR`;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+</script>
