@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <div id="div_frase">Vida do Lutador: 1000</div>
+    <button onclick="apanhar()">Apanhar</button> <button onclick="forca()">Ganhar Força</button><br>
+    <img src="https://static.wikia.nocookie.net/yakuza/images/e/e6/Y6_-_Character_Profile_-_Kazuma_Kiryu.png/revision/latest?cb=20220814001618" alt="" id="img_src" style="width: 500px;">
 </body>
+
 </html>
+
+<script>
+    var vida = 1000;
+    var perderVida = 0;
+    var ganharVida = 0;
+
+    function apanhar(){
+        
+        
+        if (vida > 0) {
+            
+            perderVida = 100;
+            vida = vida - perderVida;
+            
+            div_frase.innerHTML = `Vida do Lutador: ${vida}`;
+            div_frase.innerHTML += `<br>Lutador ainda vivo!`;
+        }  
+        if (vida <= 0){
+            
+            div_frase.innerHTML = `Vida do Lutador: ${vida}`;
+            div_frase.innerHTML += `<br>Lutador já era!`;
+            img_src.src = `https://cdn.vox-cdn.com/thumbor/DFe4n0Jv6xnrryAi_74HwxCXuUA=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/59031385/yakuza6_0000_Layer_8.0.jpg`
+        }
+    }
+    
+    function forca() {
+        ganharVida = 1.05;
+        vida = vida * ganharVida;
+        div_frase.innerHTML = `Vida do Lutador: ${vida}`;
+
+        if (vida > 0) {
+            
+            div_frase.innerHTML += `<br>Lutador ainda vivo!`;
+        } else {
+            
+            img_src.src = `https://cdn.vox-cdn.com/thumbor/DFe4n0Jv6xnrryAi_74HwxCXuUA=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/59031385/yakuza6_0000_Layer_8.0.jpg`
+            div_frase.innerHTML += `<br>Lutador já era!`;
+        }
+    }
+</script>
