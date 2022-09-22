@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <h3>Digite suas credenciais para fazer o Login</h3>
+
+    <label>Digite o nome de usuário:</label>
+    <br>
+    <input type="text" id="ipt_user" placeholder="brunoryu">
+    
+    <br><br>
+    
+    <label>Digite a senha:</label>
+    <br>
+    <input type="password" id="ipt_senha" placeholder="********">
+    <br><br>
+    
+    <button onclick="verificar()">Entrar</button>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+
+        var user = ipt_user.value;
+        var senha = ipt_senha.value;
+
+        if (user =='SPTech' && senha =='digital') {
+
+            alert('Usuário autenticado com sucesso!')
+            ipt_user.value = '';
+            ipt_senha.value = '';
+        } else {
+            
+            alert('Falha na autentição');
+            ipt_user.value = '';
+            ipt_senha.value = '';
+        }
+    }
+</script>

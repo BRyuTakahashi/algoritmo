@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech</title>
+</head>
+
+<body>
+
+    <h3>Saiba se sua nota é válida!</h3>
+
+    <label> Digite uma nota:</label>
+    <input id="ipt_nt" placeholder="7.3">
+    <br>
+    <button onclick="avaliar()">Avaliar Aluno</button>
+</body>
+
+</html>
+
+<script>
+    function avaliar(){
+
+        var nota = Number(ipt_nt.value);
+        if (nota >=0 && nota <=10){
+
+            alert('Nota Válida!');
+        } else {
+
+            alert('Onde já se viu nota menor que 0 e maior que 10?!');
+        }
+    }
+</script>

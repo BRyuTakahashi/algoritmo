@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivo</title>
+</head>
+
+<body>
+
+    <h3>Saiba os piores horário para assistir Netflix</h3>
+
+    <label>Digite em qual horario costuma acessar a Netflix:</label>
+    <br>
+    <input id="ipt_horario" placeholder="18:30">
+    <br><br>
+    <button onclick="recomendar()">Ver recomendação</button>
+
+</body>
+
+</html>
+
+<script>
+
+    function recomendar(){
+        var horario = Number(ipt_horario.value);
+
+        if (horario >= 19 && horario <= 21){
+
+            alert('Não é recomendado que você assista sua série favorita nesse horario');
+            ipt_horario.value = '';
+        } else {
+
+            alert('Esse horário é adequado para assistir sua série favorta!');
+            ipt_horario.value = '';
+        }
+    }
+</script>

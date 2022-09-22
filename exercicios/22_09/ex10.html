@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeronaltica</title>
+</head>
+
+<body>
+
+    <h3>Saiba se tem o perfil para se alistar na Aeronaltica</h3>
+
+    <label>Digite o seu nome:</label>
+    <br>
+    <input type="text" id="ipt_nome" placeholder="Bruno">
+    <br><br>
+
+    <label>Digite a sua altura:</label>
+    <br>
+    <input type="text" id="ipt_altura" placeholder="1.60">
+    <br><br>
+    
+    <label>Digite a altura inicial:</label>
+    <br>
+    <input type="text" id="ipt_alturaInicial" placeholder="Min: 1">
+    <br><br>
+    
+    <label>Digite a altura final:</label>
+    <br>
+    <input type="text" id="ipt_alturaFinal" placeholder="Maior que a altura inicial">
+    <br><br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar(){
+        var nome = ipt_nome.value;
+        var altura = ipt_altura.value;
+        var alturaInicial = Number(ipt_alturaInicial.value);
+        var alturaFinal = Number(ipt_alturaFinal.value);
+
+        if (alturaFinal < alturaInicial) {
+            alert('Altura não valida!!!');
+        } else {
+            if (altura >= alturaInicial && altura <= alturaFinal) {
+
+                alert(`O candidato ${nome} com altura de ${altura}, participará do processo de seleção de piloto`);
+            } else {
+
+                alert(`INFELIZMENTE o candidato ${nome} com altura de ${altura} não atende os requisitos!`);
+            }
+        }
+    }
+</script>

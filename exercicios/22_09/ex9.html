@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+
+<body>
+
+    <h3>Para fazer o Sign In, digite suas credenciais</h3>
+
+    <label>Digite o nome de Usuário:</label>
+    <br>
+    <input type="text" id="ipt_user" placeholder="ryu">
+    <br><br>
+    
+    <label>Digite sua senha:</label>
+    <br>
+    <input type="password" id="ipt_senha" placeholder="********">
+    <br><br>
+    
+    <label>Digite senha de segurança:</label>
+    <br>
+    <input type="text" id="ipt_token" placeholder="9452">
+    <br><br>
+
+    <button onclick="entrar()">Entrar</button>
+</body>
+
+</html>
+
+<script>
+
+    function entrar(){
+
+        var user = ipt_user.value;
+        var senha = ipt_senha.value;
+        var token = ipt_token.value;
+
+        if (user == 'SPTech' && senha == 'digital' && token == '123'){
+
+            alert('Usuário autenticado com sucesso!');
+            ipt_user.value = '';
+            ipt_senha.value = '';
+            ipt_token.value = '';
+        } else {
+            
+            alert('Falha na autenticação');
+            ipt_user.value = '';
+            ipt_senha.value = '';
+            ipt_token.value = '';
+        }
+    }
+</script>

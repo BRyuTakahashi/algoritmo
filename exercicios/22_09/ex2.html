@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID.Gov</title>
+</head>
+
+<body>
+
+    <h3>Saiba se você tem direito a ajuda do governo na crise do Covid19</h3>
+
+    <label >Digite sua renda:</label>
+    <input id="ipt_renda" placeholder="Ex: 1050">
+    <br>
+    <label >Digite a renda da sua familia:</label>
+    <input id="ipt_rendaTotal" placeholder="Ex: 4020">
+    <br>
+    <button onclick="verificar()">Verificar ajuda</button>
+</body>
+
+</html>
+
+<script>
+    var renda = 0;
+    var rendaTotal = 0;
+
+    function verificar(){
+        renda = Number(ipt_renda.value);
+        rendaTotal = Number(ipt_rendaTotal.value);
+
+        if (renda <= 1050 && rendaTotal <= 2100){
+
+            alert('Você terá direito!');
+        } else {
+
+            alert('Você NÃO terá direito!');
+        }
+    }
+</script>

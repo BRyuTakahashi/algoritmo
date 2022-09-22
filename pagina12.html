@@ -10,45 +10,30 @@
 
 <body>
 
-    <h2>Ganhos das classes sociais</h2>
+    <h2>Saio hoje?</h2>
 
-    <!-- cada option é um item da lista -->
-    <select id="sel_classe">
-        <!-- NÃO é necessário por "id" nas options! -->
-        <option value="">- Escolha um -</option>
-        <option value="20000">Classe A</option>
-        <option value="10000">Classe B</option>
-        <option value="3700">Classe C</option>
-        <option value="1500">Classe D</option>
-    </select>
-    <button onclick="ver_ganhos()">Ver Ganhos</button>
+    <input placeholder="Quanto dinheiro?" id="ipt_dinheiro"><br>
 
-    <br><br>
+    <input placeholder="Temperatura" id="ipt_temperatura"><br>
 
-    <h2>Conte-me segredos</h2>
-    <!-- onchange é executado sempre que trocarmos o valor selecionado -->
-    <select id="sel_segredo" onchange="ver_segredo()">
-        <option value="">- Escolha um -</option>
-        <option value="Eu canto rock">JP</option>
-        <option value="Estou sempre com raiva">Bruce Banner</option>
-        <option value="Não gosto do onclick">João Teodoro</option>
-    </select>
+    <button onclick="vou_sair()">Vou sair?</button>
 </body>
 
 </html>
 
 <script>
-    function ver_ganhos(){
-        var ganho_minimo = Number(sel_classe.value);
-        var segredo = sel_segredo.value;
-        alert(`Para ser dessa classe você precisa ganhar + de ${ganho_minimo}`);
-    }
 
-    function ver_segredo(){
-        var segredo = sel_segredo.value;
+    function vou_sair(){
+        
+        var dinheiro = Number(ipt_dinheiro.value);
+        var temp = Number(ipt_temperatura.value);
 
-        if(segredo != ""){
-            alert(`O segredo é: ${segredo}`);
+        if (dinheiro >= 100 && temp >= 20){
+
+            alert('SIM');
+        } else{
+
+            alert('NÃO');
         }
     }
 </script>

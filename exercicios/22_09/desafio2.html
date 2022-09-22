@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffet</title>
+</head>
+
+<body>
+
+    <select id="sel_proteina" onchange="mudar()">
+        <option value="">- Selecione a proteina -</option>
+        <option value="ovo">Ovo</option>
+        <option value="soja">Soja</option>
+        <option value="carne">Carne</option>
+    </select> <br>
+
+    <select id="sel_sobremesa" onchange="mudar()">
+        <option value="">- Selecione a Sobremesa -</option>
+        <option value="pudim">Pudim</option>
+        <option value="petit">Petit Gateau</option>
+        <option value="soja">Brigadeiro de Soja</option>
+    </select> <br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    
+    function mudar(){
+        var proteina = sel_proteina.value;
+        var sobremesa = sel_sobremesa.value
+
+        if (proteina == 'soja' && sobremesa == 'soja'){
+
+            div_resultado.innerHTML = 'Você poderia ser vegano(a)';
+        } else {
+
+            div_resultado.innerHTML = 'Você NÃO pode se vegano(a)';
+        }
+    }
+
+    // function mudar_sobremesa(){
+    //     sobremesa = sel_sobremesa.value;
+
+    //     if (proteina = 'soja' && sobremesa = 'soja'){
+
+    //         div_resultado.innerHTML = 'Você poderia ser vegano(a)';
+    //     } else {
+
+    //         div_resultado.innerHTML = 'Você NÃO pode se vegano(a)';
+    //     }
+    // }
+</script>

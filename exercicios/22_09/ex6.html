@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNESP</title>
+</head>
+
+<body>
+
+    <h3>Saiba o se foi aprovado e seu desempenho no vestibular</h3>
+
+    <label>Digite sua nota:</label>
+    <br>
+    <input id="ipt_nota" placeholder="7.40">
+    <br><br>
+    <button onclick="avaliar()">Avaliar aluno</button>
+</body>
+
+</html>
+
+<script>
+    function avaliar(){
+        var nota = Number(ipt_nota.value);
+
+        if (nota >= 0 && nota < 6) {
+
+            alert('Aluno não aprovado!');
+            ipt_nota.value = '';
+        } else if (nota >= 6 && nota <= 8.5) {
+            
+            alert('Aluno comum e aprovado');
+            ipt_nota.value = '';
+        } else if (nota > 8.5 && nota <= 10) {
+            
+            alert('Aluno Exemplar!');
+            ipt_nota.value = '';
+        } else {
+            
+            alert('Que raio de nota é essa?!');
+            ipt_nota.value = '';
+        }
+    }
+</script>

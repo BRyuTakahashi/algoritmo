@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-be">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira</title>
+</head>
+
+<body>
+
+    <label for="">Digite o nome de uma fruta:</label>
+    <input placeholder="Morango, Banana" id="ipt_fruta"> <br>
+
+    <label for="">Digite o preço dessa fruta:</label>
+    <input placeholder="1.20" id="ipt_preco"><br>
+
+    <button onclick="comprar()">Vou comprar?</button><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    
+    function comprar(){
+        var fruta = ipt_fruta.value;
+        var preco = ipt_preco.value;
+
+        if (fruta == 'uva' && preco < 8.50){
+
+            div_resultado.innerHTML = 'Vou Comprar!';
+        } else {
+            
+            div_resultado.innerHTML = 'Sem fruta hoje :(';
+        }
+    }
+</script>
