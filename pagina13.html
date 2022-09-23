@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibom</title>
+</head>
+
+<body>
+
+    <h3>Sorvetinho!</h3>
+
+    <label>Sabor:</label>
+    <br>
+    <input type="text" id="ipt_sabor" placeholder="Morango">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var sabor = ipt_sabor.value;
+
+        if (sabor == 'jilo' || sabor == 'feijão' || sabor == 'queijo'){
+            alert('Eca! Não como!');
+        } else {
+
+            alert('Como!');
+        }
+    }
+</script>
