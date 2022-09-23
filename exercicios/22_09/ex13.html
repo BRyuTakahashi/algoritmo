@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartório</title>
+</head>
+
+<body>
+
+    <h3>Saiba se as condições para o conjûge</h3>
+
+    <label>Digite quantos anos o rapaz trabalho para você:</label>
+    <br>
+    <input type="text" id="ipt_anosTrab" placeholder="12">
+    <br><br>
+    
+    <label>Digite quantos kilos de trigo rendeu:</label>
+    <br>
+    <input type="text" id="ipt_trigo" placeholder="800">
+    <br><br>
+    
+    <label>Digite quantos dias ele faltou no trabalho por estar doente:</label>
+    <br>
+    <input type="text" id="ipt_dia" placeholder="2">
+    <br><br>
+
+    <button onclick="match()">Deu Match?</button>
+    <div id="div_resultado"></div>
+    <img src="" alt="" id="img_src" style="width: 400px;">
+</body>
+
+</html>
+
+<script>
+    function match(){
+        var anosTrab = Number(ipt_anosTrab.value);
+        var trigo = Number(ipt_trigo.value);
+        var dia = Number(ipt_dia.value);
+
+        if (anosTrab >= 5 && trigo >= 300 && dia <= 5){
+
+            div_resultado.innerHTML = `Minha filha será sua!`;
+            img_src.src = `https://img.freepik.com/premium-photo/woman-with-wedding-dress_1304-366.jpg?w=2000`;
+        } else {
+            
+            div_resultado.innerHTML = `Deu ruim! Trabalhe mais 2 anos`;
+            img_src.src = `https://nestflix.fun/img/angry-dad-the-movie-thumb-1200w.jpg`;
+        }
+    }
+</script>

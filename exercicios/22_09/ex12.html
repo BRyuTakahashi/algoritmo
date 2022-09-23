@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTM</title>
+</head>
+
+<body>
+
+    <h3>Regarregue seu Bilhete Único</h3>
+
+    <label>Informe quantas passagens gostaria de comprar:</label>
+    <br>
+    <input type="text" id="ipt_passagem" placeholder="4">
+    <br><br>
+
+    <button onclick="comprar()">Comprar</button>
+    <br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function comprar(){
+        var valor = 4.40;
+        var passagem = Number(ipt_passagem.value);
+        var qnt = 0; 
+
+        if(passagem >= 8 && passagem <= 50) {
+            if (passagem >= 8 && passagem <= 19) {
+
+                qnt = (valor * passagem) * 0.97;
+            } else if (passagem >= 20 && passagem <= 49) {
+                
+                qnt = (valor * passagem) * 0.95;
+            } else {
+                
+                qnt = (valor * passagem) * 0.93;
+            }
+        } else {
+
+            alert('Quantidade invalida para comprar');
+        }
+        div_resultado.innerHTML = `Total a pagar: R$${qnt.toFixed(2)}`
+    }
+</script>
