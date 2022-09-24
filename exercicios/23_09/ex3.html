@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid.gov</title>
+</head>
+
+<body>
+
+    <h3>Saiba se o governo te ajudaria durante a pandemia do COVID-19</h3>
+
+    <label>Digite sua renda individual:</label>
+    <br>
+    <input type="text" id="ipt_rendaInd" placeholder="1200">
+    <br><br>
+    
+    <label>Digite sua renda familiar:</label>
+    <br>
+    <input type="text" id="ipt_rendaFam" placeholder="1200">
+    <br><br>
+
+    <button onclick="verificar()">Terei o benefício?</button>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var rendaInd = Number(ipt_rendaInd.value);
+        var rendaFam = Number(ipt_rendaFam.value);
+
+        if (rendaInd <= 2000 || rendaFam <= 3000){
+
+            alert(`Você terá o direito ao auxílio`);
+        } else {
+            
+            alert(`Sem direito ao auxílio`);
+        }
+    }
+</script>

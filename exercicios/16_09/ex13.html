@@ -10,7 +10,7 @@
 
 <body>
 
-    <div id="div_resultado">Valor guardado: R$00.00</div><br><br>
+    <div id="div_resultado" style="background-color: none;"> Valor guardado: R$00.00</div><br><br>
     <button onclick="cinco()">Guardar R$5.00</button> <button onclick="dez()">Gastar R$10.00</button>
 </body>
 
@@ -26,19 +26,22 @@
         div_resultado.innerHTML = `Valor guardado: R$${financas}`;
         if (financas < -20){
     
-            div_resultado.innerHTML += `<br><font color= "red";>Finanças em perigo!`;
+            div_resultado.innerHTML += `<br><color= red;>Finanças em perigo!`;
             div_resultado.innerHTML += `<br>Seu nome vai ficar sujo, hein!`;
         } else if (financas < 0){
-                
+            
             div_resultado.innerHTML += `<br><font color= "red";>Finanças em perigo!`;
         } else if (financas > 100){
             
             div_resultado.innerHTML += `<br><font color= "blue";> Finanças OK!`;
             div_resultado.innerHTML += `<br> #ostentação`;
-        } else {
-            
+
+            } else {
+                
             div_resultado.innerHTML += `<br><font color= "blue";> Finanças OK!`;
         }
+
+
     }
     
     function dez(){

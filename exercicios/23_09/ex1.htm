@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliane</title>
+</head>
+
+<body>
+
+    <h2>Saiba se Juliane Joada comeria tal fruta:</h2>
+
+    <label>Digite o nome de uma fruta:</label>
+    <br>
+    <input type="text" id="ipt_fruta" placeholder="Morango">
+    <br>
+    <button onclick="verificar()">Vai comer?</button>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+        var fruta = ipt_fruta.value;
+
+        if (fruta == 'uva' || fruta == 'abacaxi') {
+
+            alert(`Sim, ela come ${fruta}`);
+        } else {
+            
+            alert(`Ela não come ${fruta}`);
+        }
+    }
+</script>
