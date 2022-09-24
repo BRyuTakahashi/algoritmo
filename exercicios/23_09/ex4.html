@@ -10,6 +10,49 @@
 
 <body>
     <h3>Saiba se sua compra pode ser parcelada</h3>
+
+    <p>Qual o método de pagamento?</p>
+    <!-- <select id="sel_pagamento">
+
+        <option value="np">Dinheiro</option>
+        <option value="np">Cartão de Débito</option>
+        <option value="p">Cartão de Crédito</option>
+        <option value="p">Boleto</option>
+    </select> -->
+
+    <select id="sel_pagamento">
+
+        <option value="dinheiro">Dinheiro</option>
+        <option value="debito">Cartão de Débito</option>
+        <option value="credito">Cartão de Crédito</option>
+        <option value="boleto">Boleto</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="analisar()">Analisar Compra</button>
 </body>
 
 </html>
+
+<script>
+    function analisar(){
+        var formaPagamento = sel_pagamento.value;
+        
+        /* if(formaPagamento == 'p'){
+
+            alert('Pagamento poderá ser parcelado');
+        } else {
+            
+            alert('Você terá que pagar a vista');
+        } */
+        
+        if(formaPagamento == 'dinheiro' || formaPagamento == 'debito'){
+            
+            alert('Você terá que pagar a vista');
+        } else {
+            
+            alert('Pagamento poderá ser parcelado');
+        }
+    }
+</script>
