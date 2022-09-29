@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_temperatura" placeholder="Temperatura">
+    <br>
+    <button onclick="analisar()">Analisar</button>
+
+</body>
+
+</html>
+
+<script>
+    function analisar(){
+
+        var temperatura = Number(ipt_temperatura.value);
+
+        // esta variavel só pode ser true ou false
+        // portanto o tipo dela é booleano
+        var agradavel = temperatura > 23;
+
+        if (agradavel){
+
+            alert(`Temperatura agradável`);
+        } 
+        
+        // para perguntar uma condição negativa, podemos escrever a condição de diferentes maneiras
+        if (agradavel == false && agradavel != true && !agradavel) {
+
+            alert(`Temperatura desagradável`);
+        }
+        
+    }
+</script>

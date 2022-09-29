@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="">Digite sua altura(cm):</label><br>
+    <input type="text" id="ipt_altura" placeholder="162">
+    <br>
+    <button onclick="analisar()">Analisar para esporte</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var altura = Number(ipt_altura.value);
+        var esporte = altura < 160;
+
+        if (esporte){
+
+            div_resultado.innerHTML = 'Pode tentar ser piloto(a) de corrida';
+            div_resultado.innerHTML += '<br>Pode tentar ser velejador(a)';
+        } else if (altura > 160 && altura < 185){
+
+            div_resultado.innerHTML = 'Pode tentar ser jogador(a) de futebol ou handbol';
+        } else {
+
+            div_resultado.innerHTML = '';
+        }
+    }
+</script>

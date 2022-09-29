@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto da divisão</title>
+</head>
+
+<body>
+
+    <h3>Saiba se seu número é par ou ímpar e se é multiplo de 7</h3>
+    <input type="text" id="ipt_numero" placeholder="Qualquer numero" onkeyup="analisar()">
+    <div id="div_analise"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var numero = Number(ipt_numero.value);
+
+        if(numero % 2 == 0){
+
+            div_analise.innerHTML = `É par`;
+        } else {
+
+            div_analise.innerHTML = `É ímpar`;
+        }
+
+        if(numero % 7 == 0){
+
+            div_analise.innerHTML += `<br>É multiplo de 7`;
+        } else { 
+
+            div_analise.innerHTML += `<br>Não é multiplo de 7`;
+        }
+    }
+</script>

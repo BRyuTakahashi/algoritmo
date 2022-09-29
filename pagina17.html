@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_frase" placeholder="Frase Qualquer" onkeyup="descrever()">
+    <div id="div_descricao"></div>
+</body>
+
+</html>
+
+<script>
+
+    function descrever(){
+        var frase = ipt_frase.value;
+
+        var tamanho = frase.length;
+
+        var tem_b = frase.indexOf('b') >= 0;
+
+        var fraseMa = frase.toUpperCase();
+
+        var fraseMi = frase.toLowerCase();
+
+        var mudar = frase.replaceAll('a', '@');
+        
+        div_descricao.innerHTML = `O texto tem ${tamanho} caracteres`;
+        div_descricao.innerHTML += `<br> O texto tem a letra 'b'? ${tem_b}`;
+        div_descricao.innerHTML += `<br> Como ele ficaria em CAIXA ALTA? ${fraseMa}`;
+        div_descricao.innerHTML += `<br> Como ele ficaria em caixa baixa? ${fraseMi}`;
+        div_descricao.innerHTML += `<br> Se eu trocar todos os 'a' por '@': ${mudar}`;
+    }
+</script>

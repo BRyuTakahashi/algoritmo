@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech</title>
+</head>
+
+<body>
+
+    <label for="">Digite sua nota:</label><br>
+    <input type="text" id="ipt_nota" placeholder="67">
+    <br><br>
+    <label for="">Digite sua frequência:</label><br>
+    <input type="text" id="ipt_frequencia" placeholder="70">
+    <br>
+    <button onclick="avaliar()">Avaliar Aluno</button>
+    <br><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function avaliar(){
+
+        var nota = Number(ipt_nota.value);
+        var frequencia = Number(ipt_frequencia.value);
+
+        var notaIdeal = nota > 6;
+        var frequenciaIdeal = frequencia > 75;
+
+        if(notaIdeal && frequenciaIdeal){
+
+            div_resultado.innerHTML = 'Parabéns, aprovado!';
+        } else if (!notaIdeal && frequenciaIdeal) {
+
+            div_resultado.innerHTML = 'Reprovado(a) por nota!'
+        } else if (notaIdeal && !frequenciaIdeal) {
+
+            div_resultado.innerHTML = 'Reprovado(a) por frequência!'
+        } else {
+            
+            div_resultado.innerHTML = 'Reprovado(a) por frequência e nota!'
+        }
+    }
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="">Digite o nome de usuário:</label><br>
+    <input type="text" id="ipt_usuario" placeholder="PhantomThieves">
+    <br><br>
+    <label for="">Digite sua senha:</label><br>
+    <input type="text" id="ipt_senha" placeholder="*******">
+    <br><br>
+    
+    <button onclick="analisar()">Entrar</button>
+    <div id="div_resultado" style="color: ;"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    function analisar(){
+
+        div_resultado.innerHTML = '';
+
+        var usuario = ipt_usuario.value == 'aidimin';
+        var senha = ipt_senha.value == 'seinha';
+
+        if(!usuario && !senha){
+
+            div_resultado.style.color = 'red';
+            div_resultado.innerHTML = 'Seu login está invalido!';
+            div_resultado.innerHTML += '<br>Sua senha está invaida!';
+        } else if (!usuario && senha) {
+            
+            div_resultado.style.color = 'red';
+            div_resultado.innerHTML = 'Seu login está invalido!';
+        } else if (usuario && !senha){
+            
+            div_resultado.style.color = 'red';
+            div_resultado.innerHTML = 'Seu senha está invalido!';
+            alert(`Entre em contato com o suporte para recuperar sua senha`);
+        } else {
+            
+            div_resultado.style.color = 'blue';
+            div_resultado.innerHTML = 'Usuário autenticado com sucesso!'
+        }
+    }
+</script>
