@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech - Login</title>
+</head>
+
+<body>
+
+    <label >Digite o nome de usuario</label><br>
+    <input type="text" id="ipt_usuario" placeholder="Nome">
+    <br><br>
+    <label>Digite a senha</label><br>
+    <input type="text" id="ipt_senha" placeholder="**********">
+    <br><br>
+    <label>Digite a chave de segurança</label><br>
+    <input type="text" id="ipt_chave" placeholder="285">
+    <br><br>
+    <button onclick="verificar()">Verificar Usuário</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function verificar(){
+
+        var nome = ipt_usuario.value == 'SPTECH';
+        var senha = ipt_senha.value == 'SCHOOL';
+        var chave = ipt_chave.value == '595';
+
+        if(nome && senha && chave){
+
+            div_resultado.innerHTML = `Usuário autenticado com sucesso`;
+        } else {
+
+            div_resultado.innerHTML = `Falha na autenticação`;
+        }
+    }
+</script>

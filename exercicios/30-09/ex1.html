@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Maria Braga</title>
+</head>
+
+<body>
+
+    <h3>Saiba se o seu arroz será perfeito!</h3>
+
+    <select id="sel_arroz">
+        <option value="branco">Branco</option>
+        <option value="integral">Integral</option>
+    </select>
+    <br><br>
+    <label>Quanto tempo de cozimento?</label><br>
+    <input type="text" id="ipt_tempo" placeholder="10min">
+    <br><br>
+    <label>Quantos gramas de sal?</label><br>
+    <input type="text" id="ipt_sal" placeholder="10g">
+    <br><br>
+    <button onclick="avaliar()">Avaliar Arroz</button>
+    <div id="div_resultado"></div>
+    <img src="" id="img_src" style="width: 500px;">
+</body>
+
+</html>
+
+<script>
+
+    function avaliar(){
+
+        var arroz = sel_arroz.value;
+        var tempo = Number(ipt_tempo.value);
+        var sal = Number(ipt_sal.value);
+
+        var arrozBranco = arroz == 'branco' && tempo == 10 && sal <= 10;
+        var arrozIntegral = arroz == 'integral' && tempo == 20 && sal <= 15;
+
+        if (arrozBranco || arrozIntegral) {
+
+            div_resultado.innerHTML = `Arroz Perfeito`;
+            if (arroz == 'branco') {
+
+                img_src.src = 'https://cdn.panelinha.com.br/receita/1555945789657-Panelinha-29-01-2015-6528.jpg';
+            } else {
+
+                img_src.src= 'https://cdn.cumbucaboa.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/r/arroz_integral.jpg.png';
+            }
+        } else {
+
+            div_resultado.innerHTML = `Seu arroz não está perfeito`;
+            img_src.src = 'https://observatoriodatv.uol.com.br/wp-content/uploads/2020/02/screen-shot-2020-02-06-at-17-08-36.jpg';
+        }
+    }
+</script>

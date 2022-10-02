@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+
+<body>
+
+    <p>Selecione o seu pokemon inicial:</p>
+    <select id="sel_inicial">
+        <option value="fogo">Fogo</option>
+        <option value="agua">Agua</option>
+        <option value="planta">Planta</option>
+    </select>
+    <br><br>
+    
+    <p>Selecione o pokemon inicial do seu rival:</p>
+    <select id="sel_rival">
+        <option value="fogo">Fogo</option>
+        <option value="agua">Agua</option>
+        <option value="planta">Planta</option>
+    </select>
+    <br><br>
+    <button onclick="batalhar()">Batalhar!</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    var vitoria = 0;
+    var derrota = 0;
+    var empate = 0;
+
+    function batalhar(){
+
+        var inicial = sel_inicial.value;
+        var rival = sel_rival.value;
+
+        if (inicial == rival){
+
+            div_resultado.innerHTML = `A batalha empatou!`;
+            empate ++;
+        } else {
+
+            if (inicial == 'fogo' && rival == 'planta' || inicial == 'agua' && rival == 'fogo' || inicial == 'planta' && rival == 'agua'){
+
+                div_resultado.innerHTML = `O iniciante venceu!`;
+                vitoria ++;
+            } else{
+
+                div_resultado.innerHTML = `O iniciante perdeu`;
+                derrota ++;
+            }
+        }
+        div_resultado.innerHTML += `<br>Iniciante: ${inicial}`; 
+        div_resultado.innerHTML += `<br>Rival: ${rival}`;
+        div_resultado.innerHTML += `<br>Vitorias: ${vitoria}`;
+        div_resultado.innerHTML += `<br>Derrota: ${derrota}`;
+        div_resultado.innerHTML += `<br>Empate: ${empate}`;
+
+    }
+</script>

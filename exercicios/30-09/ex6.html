@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBA</title>
+</head>
+
+<body>
+
+    <label>Digite o nome do produto que deseja comprar:</label><br>
+    <input type="text" id="ipt_produto" placeholder="">
+    <br><br>
+    <label>Digite o preço original do produto:</label><br>
+    <input type="text" id="ipt_preco" placeholder="">
+    <br><br>
+    <label>Digite o cupom de desconto:</label><br>
+    <input type="text" id="ipt_cupom" placeholder="">
+    <br><br>
+    <button onclick="aplicar()">Aplicar Desconto</button>
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function aplicar(){
+
+        var produto = ipt_produto.value;
+        var preco = Number(ipt_preco.value);
+        var cupom = ipt_cupom.value;
+
+        var tenis = produto == 'Tenis' || produto == 'tenis' || produto == 'Tênis' || produto == 'TENIS' || produto == 'TeNiS' || produto == 'tEnIs';
+        var livros = produto == 'Livros' || produto == 'livros' || produto == 'LIVROS' || produto == 'LiVRoS' || produto == 'lIvrOs';
+        var material = produto == 'material escolar' || produto == 'Material Escolar' || produto == 'MATERIAL ESCOLAR';
+        var celular = produto == 'Celular' || produto == 'celular' || produto == 'CELULAR' || produto == 'CeLuLaR';
+        var notebook = produto == 'Notebook' || produto == 'notebook' || produto == 'NOTEBOOK' || produto == 'NoTeBooK';
+        var tablet = produto == 'tablet' || produto == 'Tablet' || produto == 'TABLET' || produto == 'TaBLeT';
+
+        var combo1 = tenis || livros || material;
+        var combo2 = celular || notebook || tablet;
+
+        if (produto == ''){
+
+            alert(`Insira um produto para prosseguir!`);
+        } else if (preco == ''){
+
+            alert(`Insira um preço para prosseguir!`);
+        } else if (cupom == ''){
+
+            alert (`Insira um cupom para prosseguir!`);
+        } else {
+
+            if(combo1 && cupom == 'GERAL_10'){
+
+                preco = preco * 0.9;
+                div_resultado.innerHTML = `Cupom para produtos em geral aplicado! Preço final será ${preco}`;
+            } else if (combo2 && cupom == 'TECH_19'){
+
+                preco = preco * 0.81;
+                div_resultado.innerHTML = `Cupom para produtos tecnológicos foi aplicado! Preço final será ${preco}`;
+            } else {
+
+                div_resultado.innerHTML = `Cupom não aplicado! Preencha os campos e tente novamente!`
+            }
+
+
+        }
+    }
+</script>

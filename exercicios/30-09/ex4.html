@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech</title>
+</head>
+
+<body>
+
+    <label>Digite a sua nota:</label><br>
+    <input type="text" id="ipt_nota" placeholder="8.4">
+    <br><br>
+    <label>Digite a sua frequencia:</label><br>
+    <input type="text" id="ipt_frequencia" placeholder="60">
+    <br><br>
+    <button onclick="analisar()">Analisar Aluno</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var nota = Number(ipt_nota.value);
+        var frequencia = Number(ipt_frequencia.value);
+
+        if (nota < 0 || nota > 10){
+
+            alert(`Onde já se viu nota menor que 0 ou maior que 10?!`);
+            ipt_nota.value = ``;
+            ipt_frequencia.value = ``;
+
+        } else if (frequencia < 0 || frequencia > 100){
+            
+            ipt_nota.value = ``;
+            ipt_frequencia.value = ``;
+            alert(`Onde já se viu frequencia menor que 0 ou maior que 100?!`);
+        } else {
+
+            if (nota >= 0 && nota <= 6) {
+
+                div_resultado.innerHTML = `Aluno ficou abaixo da media!`;
+            } else if (nota > 6 && nota <= 8){
+
+                div_resultado.innerHTML = `Aluno ficou na media`;
+            } else {
+
+                div_resultado.innerHTML = `Aluno acima da media`;
+            }
+
+            if (frequencia >= 75) {
+
+                div_resultado.innerHTML += `<br>Aluno aprovado por frequencia`;
+            } else {
+                
+                div_resultado.innerHTML += `<br>Aluno reprovado por frequencia`;
+            }
+        }
+    }
+</script>

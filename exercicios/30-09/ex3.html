@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom</title>
+</head>
+
+<body>
+
+    <p>Selecione a marca da TV</p>
+    <select id="sel_tv">
+        <option value="samsung">Samsung</option>
+        <option value="lg">LG</option>
+        <option value="mondial">Mondial</option>
+        <option value="britania">Britânia</option>
+    </select>
+    <br><br>
+    <label>Digite o preço da TV:</label><br>
+    <input type="text" id="ipt_preco" placeholder="2500">
+    <br><br>
+    <button onclick="analisar()">Analisar Compra</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        var tv = sel_tv.value;
+        var preco = Number(ipt_preco.value);
+
+        if(preco < 800 || preco > 2000){
+
+            div_resultado.innerHTML = `TV fora da faixa de preço`;
+
+            if(preco < 800){
+
+                div_resultado.innerHTML += `<br>Preco baixo demais!`;
+            } else {
+
+                div_resultado.innerHTML += `<br>TV cara demais, infelizmente`;
+            }
+        } else {
+
+            if (tv == 'mondial' || tv == 'britania'){
+
+                div_resultado.innerHTML = `Na faixa de preço, porém marca não confiável`;
+            } else {
+
+                div_resultado.innerHTML = `Essa TV pode entrar na sua lista!`;
+            }
+        }
+    }
+</script>
