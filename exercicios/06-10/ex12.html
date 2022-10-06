@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Quantas voltas o carro dará na corrida?</label><br>
+    <input type="text" id="ipt_volta" placeholder="4"><br><br>
+
+    <button onclick="iniciar()">Iniciar Corrida!</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function iniciar(){
+        div_resultado.innerHTML = '';
+        var volta = Number(ipt_volta.value);
+        var contador = 0;
+
+        while (contador <= volta){
+            contador++;
+
+            if(contador <= volta){
+
+                div_resultado.innerHTML += `<br>Carro dando a ${contador}ª volta`;
+            } else {
+                div_resultado.innerHTML += `<br>Corrida finalizada!`
+            }
+        }
+    }
+</script>

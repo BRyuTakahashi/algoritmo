@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFit</title>
+</head>
+
+<body>
+
+    <label>Qual o intervalo de dias que você fica sem treinar?</label><br>
+    <input type="text" id="ipt_dias" placeholder="4">
+    <br><br>
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function exibir(){
+
+        div_resultado.innerHTML = '';
+
+        var dia = Number(ipt_dias.value);
+        var contador = 0;
+
+        while (contador < 30){
+            
+            if(contador % dia == 0){
+                
+                contador++;
+                div_resultado.innerHTML += `Dia ${contador} - Musculação<br>`;
+            } else {
+                
+                contador++;
+                div_resultado.innerHTML += `Dia ${contador} - Comer, dormir, etc<br>`;
+            }
+            
+        }
+    }
+</script>

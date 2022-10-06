@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da diferença</title>
+</head>
+
+<body>
+
+    <h2>Saiba se o intervalo entre dois números é par</h2>
+    <label>Digite um número:</label><br>
+    <input type="text" id="ipt_numero1" placeholder="29"><br>
+    <label>Digite outro número (maior que o primeiro número):</label><br>
+    <input type="text" id="ipt_numero2" placeholder="35"><br><br>
+    <button onclick="verificar()">S2 Pares</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function verificar(){
+
+        div_resultado.innerHTML = '';
+
+        var n1 = Number(ipt_numero1.value);
+        var n2 = Number(ipt_numero2.value);
+        // var numero = n2 - n1;
+
+        while (n1 <= n2){
+
+            if(n1 % 2 == 0) {
+
+                div_resultado.innerHTML += `<br>${n1}`;
+            }
+            n1++;
+        }
+    }
+</script>

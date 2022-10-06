@@ -30,24 +30,24 @@
 
     function aplicar(){
 
-        var produto = ipt_produto.value;
+        var produto = ipt_produto.value.toLowerCase();
         var preco = Number(ipt_preco.value);
         var cupom = ipt_cupom.value;
 
-        var tenis = produto == 'Tenis' || produto == 'tenis' || produto == 'Tênis' || produto == 'TENIS' || produto == 'TeNiS' || produto == 'tEnIs';
-        var livros = produto == 'Livros' || produto == 'livros' || produto == 'LIVROS' || produto == 'LiVRoS' || produto == 'lIvrOs';
-        var material = produto == 'material escolar' || produto == 'Material Escolar' || produto == 'MATERIAL ESCOLAR';
-        var celular = produto == 'Celular' || produto == 'celular' || produto == 'CELULAR' || produto == 'CeLuLaR';
-        var notebook = produto == 'Notebook' || produto == 'notebook' || produto == 'NOTEBOOK' || produto == 'NoTeBooK';
-        var tablet = produto == 'tablet' || produto == 'Tablet' || produto == 'TABLET' || produto == 'TaBLeT';
+        var tenis = produto == 'tenis' || produto == 'tênis';
+        var livros = produto == 'livros';
+        var material = produto == 'material escolar';
+        var celular = produto == 'celular';
+        var notebook = produto == 'notebook';
+        var tablet = produto == 'tablet';
 
-        var combo1 = tenis || livros || material;
-        var combo2 = celular || notebook || tablet;
+        var combo1 = tenis || livros || material && cupom == 'GERAL_10';
+        var combo2 = celular || notebook || tablet && cupom == 'TECH_19';
 
         if (produto == ''){
 
             alert(`Insira um produto para prosseguir!`);
-        } else if (preco == ''){
+        } else if (preco == 0){
 
             alert(`Insira um preço para prosseguir!`);
         } else if (cupom == ''){
@@ -55,11 +55,11 @@
             alert (`Insira um cupom para prosseguir!`);
         } else {
 
-            if(combo1 && cupom == 'GERAL_10'){
+            if(combo1){
 
                 preco = preco * 0.9;
                 div_resultado.innerHTML = `Cupom para produtos em geral aplicado! Preço final será ${preco}`;
-            } else if (combo2 && cupom == 'TECH_19'){
+            } else if (combo2){
 
                 preco = preco * 0.81;
                 div_resultado.innerHTML = `Cupom para produtos tecnológicos foi aplicado! Preço final será ${preco}`;

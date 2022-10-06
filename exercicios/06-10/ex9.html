@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coisas que eu gosto</title>
+</head>
+
+<body>
+
+    <label>Digite um número:</label><br>
+    <input type="text" id="ipt_numero" placeholder="27"><br><br>
+    <label>Digite uma frase:</label><br>
+    <input type="text" id="ipt_frase" placeholder="eu gosto de..."><br><br>
+
+    <button onclick="verificar()">Papagaio</button>
+
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+
+        var numero = Number(ipt_numero.value);
+        var frase = ipt_frase.value;
+        var contador = 0;
+        while (contador < numero){
+
+            contador++;
+            alert(`${contador} - ${frase}`)
+        }
+    }
+</script>

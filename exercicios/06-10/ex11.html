@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Digite quantos trofeus títulos de mundial seu clube tem:</label><br>
+    <input type="text" id="ipt_trofeu" placeholder="3"><br><br>
+
+    <button onclick="verificar()">Ver trofeus de mundiais FIFA</button><br>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function verificar() {
+        div_resultado.innerHTML = '';
+        var trofeu = Number(ipt_trofeu.value);
+        var contador = 0;
+
+        if(trofeu <= 0){
+
+            div_resultado.innerHTML = '<img src="https://ogimg.infoglobo.com.br/in/24097293-3e9-4c5/FT1086A/652/x85841104_Soccer-FootballCopa-LibertadoresFinalFlamengo-fans-watching-the-finalRio-de-Jan.jpg.pagespeed.ic.eT6kZdnwDv.jpg" style="width: 200px;">'
+        } else{
+
+            while (contador < trofeu){
+                contador++;
+                div_resultado.innerHTML += '<img src="https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Summonerscup.jpg/revision/latest?cb=20150918135411" alt="" style="width: 200px;">'
+
+            }
+        }
+    }
+</script>

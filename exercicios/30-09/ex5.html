@@ -10,14 +10,15 @@
 
 <body>
 
+    <h2>Bem vindo a região de Sinnoh</h2>
     <p>Selecione o seu pokemon inicial:</p>
     <select id="sel_inicial">
         <option value="fogo">Fogo</option>
         <option value="agua">Agua</option>
         <option value="planta">Planta</option>
     </select>
-    <br><br>
-    
+    <br>
+
     <p>Selecione o pokemon inicial do seu rival:</p>
     <select id="sel_rival">
         <option value="fogo">Fogo</option>
@@ -37,28 +38,28 @@
     var derrota = 0;
     var empate = 0;
 
-    function batalhar(){
+    function batalhar() {
 
         var inicial = sel_inicial.value;
         var rival = sel_rival.value;
 
-        if (inicial == rival){
+        if (inicial == rival) {
 
             div_resultado.innerHTML = `A batalha empatou!`;
-            empate ++;
+            empate++;
         } else {
 
-            if (inicial == 'fogo' && rival == 'planta' || inicial == 'agua' && rival == 'fogo' || inicial == 'planta' && rival == 'agua'){
+            if (inicial == 'fogo' && rival == 'planta' || inicial == 'agua' && rival == 'fogo' || inicial == 'planta' && rival == 'agua') {
 
                 div_resultado.innerHTML = `O iniciante venceu!`;
-                vitoria ++;
-            } else{
+                vitoria++;
+            } else {
 
                 div_resultado.innerHTML = `O iniciante perdeu`;
-                derrota ++;
+                derrota++;
             }
         }
-        div_resultado.innerHTML += `<br>Iniciante: ${inicial}`; 
+        div_resultado.innerHTML += `<br>Iniciante: ${inicial}`;
         div_resultado.innerHTML += `<br>Rival: ${rival}`;
         div_resultado.innerHTML += `<br>Vitorias: ${vitoria}`;
         div_resultado.innerHTML += `<br>Derrota: ${derrota}`;

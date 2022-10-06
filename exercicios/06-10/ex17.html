@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber</title>
+</head>
+
+<body>
+
+    <label>Quantas pessoas vão de carona?</label><br>
+    <input type="text" id="ipt_carona" placeholder="3">
+    <br><br>
+    <button onclick="partir()">#Partiu Carona</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function partir(){
+
+        div_resultado.innerHTML = '';
+
+        var carona = Number(ipt_carona.value);
+        var contador = 0;
+
+        while(contador < carona){
+
+            contador++;
+            if(contador == 1){
+
+                div_resultado.innerHTML = `Entrou o ${contador}º passageiro (que é o(a) motorista)<br>`;
+            } else if (contador > 1 && contador < 6){
+                
+                div_resultado.innerHTML += `Entrou o ${contador}º passageiro<br>`;
+            } else {
+                
+                div_resultado.innerHTML += `O ${contador}º passageiro terá que esperar<br>`;
+            }
+        }
+    }
+</script>
