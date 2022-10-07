@@ -27,13 +27,22 @@
 
         var elefante = Number(ipt_elefante.value);
         var contador = 1;
-        var incomodam = 'incomodam,'
+        var incomoda = 0;
 
         while (contador < elefante){
 
             contador++;
             div_resultado.innerHTML += `1 elefante incomoda muita gente!<br>`;
-            div_resultado.innerHTML += `${contador} elefantes ${contador * incomodam} muito mais!<br>`;
+            div_resultado.innerHTML += `${contador} elefantes `;
+
+            while (incomoda < contador){
+                div_resultado.innerHTML += `incomodam, `
+                incomoda++;
+            }
+            incomoda = 0;
+
+            div_resultado.innerHTML += `muito mais!<br>`;
+
         }
     }
 </script>

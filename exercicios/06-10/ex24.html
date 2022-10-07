@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Digite um número:</label><br>
+    <input type="text" id="ipt_n1"><br>
+    <label>Digite outro número (maior que o primeiro) para ser o intervalo entre o primeiro:</label><br>
+    <input type="text" id="ipt_n2"><br><br>
+    <button onclick="analisar()">Analisar</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function analisar(){
+
+        div_resultado.innerHTML = '';
+
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var contador = n1;
+
+        if (n1 <= 0){
+
+            alert(`Digite o primeiro campo com um número maior que 0`);
+        } else if (n2 <= n1){
+
+            alert(`Digite o segundo campo com um número maior que o primeiro`);
+        } else{
+
+            while (contador <= n2){
+
+                if(contador % 2 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 2<br>`;
+                } else if(contador % 3 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 3<br>`;
+                } else if (contador % 5 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 5<br>`;
+                } else if (contador % 7 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 7<br>`;
+                } else if (contador % 11 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 11<br>`;
+                } else if (contador % 13 == 0){
+
+                    div_resultado.innerHTML += `O número ${contador} é divisível por 13<br>`;
+                } else {
+
+                    div_resultado.innerHTML += `O número ${contador} não é divisível pelos principais números primos<br>`;
+                }
+
+                contador++;
+            }
+        }
+        div_resultado.innerHTML += `O intervalo de ${n1} a ${n2} tem ${n2 - n1} números, sendo que ${} são divisíveis por algum número primo`;
+
+    }
+</script>

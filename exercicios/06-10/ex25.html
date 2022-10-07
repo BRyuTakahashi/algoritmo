@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Quanto você já tem guardado?</label><br>
+    <input type="text" id="ipt_guardado" placeholder="2000">
+    <br><br>
+    <label>Quanto você pretende guardar por mês?</label><br>
+    <input type="text" id="ipt_poupado" placeholder="350">
+    <br><br>
+    <label>Quantos meses você pretende economizar?</label><br>
+    <input type="text" id="ipt_mes" placeholder="4">
+    <br><br>
+    <label>Qual a porcentagem de juros?</label><br>
+    <input type="text" id="ipt_juros" placeholder="60">
+    <br><br>
+    <button onclick="poupar()">Vamos poupar</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function poupar(){
+
+        var guardado = Number(ipt_guardado.value);
+        var poupado = Number(ipt_poupado.value);
+        var mes = Number(ipt_mes.value);
+        var juros = (Number(ipt_juros.value)) / 100;
+
+        if(poupado <= 0){
+
+            alert(`Digite um valor que prentende guardar acima de 0!`);
+        } else if (mes <= 10){
+
+            alert(`Digite uma quantidade de meses maior que 10`);
+        } else if (juros <= 0.5 || juros >= 2){
+
+            alert(`Digite uma quantidade de juros entre 50 e 200%`);
+        } else {
+
+            
+        }
+    }
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTans</title>
+</head>
+
+<body>
+
+    <label>Quantos onibus você pega para chegar na SPTec?</label><br>
+    <input type="text" id="ipt_onibus" placeholder="1"><br>
+    <label>Quantos trens você pega para chegar na SPTec?</label><br>
+    <input type="text" id="ipt_trem" placeholder="3"><br>
+    <label>Quantos metros você pega para chegar na SPTec?</label><br>
+    <input type="text" id="ipt_metro" placeholder="2"><br>
+    <br><br>
+    <button onclick="partir()">#Partiu Trajeto</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function partir(){
+
+        div_resultado.innerHTML = '';
+
+        var onibus = Number(ipt_onibus.value);
+        var trem = Number(ipt_trem.value);
+        var metro = Number(ipt_metro.value);
+        var contador = 0;
+
+        if (onibus < 0 && trem < 0 && metro < 0){
+
+            alert(`Ta engraçadinho ein Robin`);
+        
+        }else if (onibus == 0 && trem == 0 && metro == 0){
+
+            div_resultado.innerHTML = `<span style="color: #DED828">OPS... Parece que esse veio de helicóptero!!! Kkk </span>`;
+
+        }else{
+
+            while(contador < onibus){
+
+                contador++;
+                div_resultado.innerHTML += `<br><span style="color: red;">Pegando o ${contador}º onibus. </span>`;
+
+                if(contador == 2){
+
+                    div_resultado.innerHTML += `Começando a cansar`;
+                } else if (contador == 3){
+                    
+                    div_resultado.innerHTML += `Já cansado`;
+                }
+            }
+            
+            contador = 0;
+            
+            while(contador < trem){
+                
+                contador++;
+                div_resultado.innerHTML += `<br><span style="color: green;">Pegando o ${contador}º trem. </span>`;
+                
+                if(contador == 2){
+        
+                    div_resultado.innerHTML += `Começando a cansar`;
+                } else if (contador == 3){
+                    
+                    div_resultado.innerHTML += `Já cansado`;
+                }
+            }
+            
+            contador = 0;
+            
+            while(contador < metro){
+                
+                contador++;
+                div_resultado.innerHTML += `<br><span style="color: blue;">Pegando o ${contador}º metro. </span>`;
+                if(contador == 2){
+        
+                    div_resultado.innerHTML += `Começando a cansar`;
+                } else if (contador == 3){
+                    
+                    div_resultado.innerHTML += `Já cansado`;
+                }
+            }
+        }
+    }
+</script>

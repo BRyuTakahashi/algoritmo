@@ -25,13 +25,19 @@
 
         var numero = Number(ipt_numero.value);
         var contador = 1;
-        while (contador <= numero){
-            
-            if(contador % 5 == 0){
 
-                div_resultado.innerHTML += `<br>${contador}`;
+        if (numero >= 20 && numero <= 100){
+            while (contador <= numero){
+                
+                if(contador % 5 == 0){
+
+                    div_resultado.innerHTML += `<br>${contador}`;
+                }
+                contador++;
             }
-            contador++;
+        } else {
+
+            alert(`Digite um número válido!`);
         }
     }
 </script>

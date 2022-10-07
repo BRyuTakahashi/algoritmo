@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XP Investimento</title>
+</head>
+
+<body>
+
+    <label>Digite o valor guardado:</label><br>
+    <input type="text" id="ipt_guardado" placeholder="1200">
+    <br><br>
+    <label>Digite o valor que irá guardar por mês:</label><br>
+    <input type="text" id="ipt_poupado" placeholder="100">
+    <br><br>
+    <label>Quantos meses pretende seguir este plano?</label><br>
+    <input type="text" id="ipt_mes" placeholder="Min: 6/ Max: 20">
+    <br><br>
+    <button onclick="poupar()">Vamos Poupar</button>
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function poupar(){
+
+        div_resultado.innerHTML = '';
+
+        var guardado = Number(ipt_guardado.value);
+        var poupado = Number(ipt_poupado.value);
+        var mes = Number(ipt_mes.value);
+        var contador = 0;
+        var economia = guardado;
+
+        if(poupado <= 0){
+
+            div_resultado.innerHTML += `Digite um valor acima de 0!`;
+        } else if(mes < 6 || mes > 20){
+            
+            div_resultado.innerHTML += `Digite um quantidade de meses entre 6 e 20!`;
+        } else{
+        
+            while(contador < mes){
+
+                contador++;
+                div_resultado.innerHTML += `Marco tinha ${economia}, depois do depósito do ${contador}º mês ele ficou com `;
+                economia = economia + poupado
+                div_resultado.innerHTML += `R$${economia}<br>`;
+                
+            }
+            div_resultado.innerHTML += `<br>Você começou com R$${guardado}`;
+            div_resultado.innerHTML += `<br>Durante ${mes} meses você poupou R$${poupado * mes}`;
+            div_resultado.innerHTML += `<br>E agora você tem R$${economia}`;
+        }
+
+    }
+</script>
