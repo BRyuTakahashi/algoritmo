@@ -23,13 +23,13 @@
 
         var tamanho = frase.length;
 
-        var tem_b = frase.indexOf('b') >= 0;
+        var tem_b = frase.indexOf('b') >= 0 ;
 
         var fraseMa = frase.toUpperCase();
 
         var fraseMi = frase.toLowerCase();
 
-        var mudar = frase.replaceAll('a');
+        var mudar = frase.replaceAll('a', '@');
         
         div_descricao.innerHTML = `O texto tem ${tamanho} caracteres`;
         div_descricao.innerHTML += `<br> O texto tem a letra 'b'? ${tem_b}`;
