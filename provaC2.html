@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Oculta da Folha</title>
+</head>
+
+<body>
+
+    <p>Digite a quantidade de Chakra que Naruto tem:</p>
+    <input type="text" id="ipt_chakra" placeholder="8000">
+    <p>Quantos clones quer criar?</p>
+    <input type="text" id="ipt_clones" placeholder="5">
+    <p>Quantos clones tem por linha?</p>
+    <input type="text" id="ipt_linha" placeholder="3"><br>
+    <button onclick="criar()">Criar Clones</button>
+    <div id="div_resultado"></div>
+    <!-- <img src="" alt="" id="img_src"> -->
+</body>
+
+</html>
+
+<script>
+
+    function criar(){
+
+        div_resultado.innerHTML = `<br>`;
+
+        var chakra = Number(ipt_chakra.value);
+        var clones = Number(ipt_clones.value);
+        var linha = Number(ipt_linha.value);
+        
+        var condicao = chakra >= 20 && chakra <= 5000 && clones >= 0 && clones <= 250 && linha > 0;
+        var contador = 0;
+        var sobraChakra = chakra - clones * 20;
+        
+
+        if (condicao){
+            if (chakra >= clones * 20){
+                
+                while (contador != clones){
+
+                    contador++;
+                    div_resultado.innerHTML += `<img src="https://preview.redd.it/tudjq02jost71.jpg?auto=webp&s=ed558eeba8ee7c136febe2cd0084d2ab3661b9eb" alt="" style="width: 120px;">`
+
+                    if(contador % linha == 0){
+                        div_resultado.innerHTML += `<br>`
+                    }
+                }
+
+                div_resultado.innerHTML += `<br>ANÁLISE DE GERAÇÃO DE CLONES`;
+                div_resultado.innerHTML += `<br>Energia Inicial: ${chakra}`;
+                div_resultado.innerHTML += `<br>Quantidade de Clones: ${clones}`;
+                div_resultado.innerHTML += `<br>Sobra de Energia: ${sobraChakra}`;
+
+                if(sobraChakra > 1000 || clones > 50 && (sobraChakra / chakra) * 100 >= 20){
+                    
+                    div_resultado.innerHTML += `<br> PROVAVELMENTE VOCÊ VAI GANHAR`;
+                } else if (sobraChakra > 500 || clones >= 20 && clones <= 50 && (sobraChakra / chakra) * 100 >= 10){
+
+                    div_resultado.innerHTML += `<br> A LUTA VAI SER MUITO BOA`;
+                } else {
+
+                    div_resultado.innerHTML += `<br> TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`;
+                }
+                
+                
+            } else{
+
+                alert(`Quantidade de Chakra(energia) insuficiente para gerar os clones`);
+            }
+
+        } else {
+
+            alert(`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0`);
+        }
+    }
+</script>

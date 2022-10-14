@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Digite quantas Águas engarrafadas adicionará no estoque:</p>
+    <input type="text" id="ipt_agua" placeholder="102">
+    <p>Digite quantos Cocos fechados adicionará no estoque:</p>
+    <input type="text" id="ipt_coco" placeholder="137"><br>
+    <button onclick="abrir()">Abrir o quiosque</button><br><br>
+
+    <p>Quanto você vendeu?</p>
+    <input type="text" id="ipt_venda" placeholder="100">
+    <p>Qual o produto?</p>
+    <select id="sel_produto">
+        <option value="agua">Água engarrafada</option>
+        <option value="coco">Coco Fechado</option>
+    </select><br>
+    <button onclick="registrar()">Registrar vendas</button>
+    <button onclick="encerrar()" style="background-color: red;">Encerrar Vendas</button>
+    <div id="div_resultado"></div>
+    <div id="div_registro"></div>
+</body>
+
+</html>
+
+<script>
+
+    // var agua = 0;
+    // var coco = 0;
+    var cocoTotal = 0;
+    var aguaTotal = 0;
+    var aguaVenda = 0;
+    var cocoVenda = 0;
+
+    function abrir(){
+
+        div_resultado.innerHTML = ``;
+        var agua = Number(ipt_agua.value);
+        var coco = Number(ipt_coco.value);
+        
+        if(agua < 100){
+
+            alert(`Com essa quantidade de Água engarrafada não dá para abrir o quiosque`);
+        } else if(coco < 200){
+
+            alert(`Com essa quantidade de Coco fechado não dá para abrir o quiosque`);
+        } else if (agua >= 100 && agua <= 1000){
+
+            aguaTotal = agua + aguaTotal;
+            cocoTotal = coco + cocoTotal;
+            div_resultado.innerHTML += `Engarrafe mais água de coco`;
+            if (coco >= 200 && coco <= 2000){
+                
+                div_resultado.innerHTML += `<br>Compre mais cocos`;
+                div_resultado.innerHTML += `<br>Estoque inicial de Água engarrafada: ${aguaTotal}`;
+                div_resultado.innerHTML += `<br>Estoque inicial de coco fechado: ${cocoTotal}`;
+            }
+        }
+    }
+
+    function registrar(){
+
+        var produto = sel_produto;
+        cocoTotal = cocoTotal - venda;
+        
+        if(produto == 'agua'){
+            
+            aguaVenda = Number(ipt_venda.value);
+            aguaTotal = aguaTotal - venda;
+            div_registro.innerHTML = `<br>Com a venda de ${venda} de Água engarrafada o saldo do estoque é de ${aguaTotal}`;
+        } else {
+            
+            cocoVenda = Number(ipt_venda.value);
+            cocoTotal = cocoTotal - venda;
+            div_registro.innerHTML = `<br>Com a venda de ${venda} de Coco fechado o saldo do estoque é de ${cocoTotal}`;
+        }
+    }
+
+    function encerrar(){
+
+        div_resultado.innerHTML = '';
+        div_registro.innerHTML = '';
+
+        div_resultado.innerHTML += `Vendas de água engarrafada`;
+        div_resultado.innerHTML += `<br>Saldo de produtos no estoque: ${aguaTotal}`;
+        div_resultado.innerHTML += `<br>Quantidade de vendas: ${venda}`
+        div_resultado.innerHTML += ``
+    }
+</script>
