@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C6</title>
+</head>
+
+<body>
+
+    <p>Quantos depósitos já fez no banco?</p>
+    <input type="text" id="ipt_depositos" placeholder="10">
+    
+    <p>Qual o valor do depósito?</p>
+    <input type="text" id="ipt_valor" placeholder="230">
+
+    <button onclick="acompanhar()">Acompanhar grana</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function acompanhar(){
+
+        div_resultado.innerHTML = ``;
+
+        var depositos = Number(ipt_depositos.value);
+        var valor = Number(ipt_valor.value);
+
+        for (var contador = 1; contador <= depositos; contador ++){
+
+            div_resultado.innerHTML += `${contador}º Mês: R$${valor * contador}<br>`;
+        }
+        div_resultado.innerHTML += `Total guardado: R$${valor * depositos}`;
+    }
+</script>

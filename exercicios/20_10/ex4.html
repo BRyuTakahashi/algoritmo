@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio e Limite</title>
+</head>
+
+<body>
+
+    <p>Digite o número inicial da amostra</p>
+    <input type="text" id="ipt_inicio" placeholder="1"><br><br>
+
+    <p>Digite o número limite da amostra</p>
+    <input type="text" id="ipt_limite" placeholder="99"><br><br>
+
+    <button onclick="contar()">Contar</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function contar(){
+
+        div_resultado.innerHTML = ``;
+
+        var inicio = Number(ipt_inicio.value);
+        var limite = Number(ipt_limite.value);
+
+        if (inicio >= 0 && limite < 100){
+
+            for (;inicio <= limite; inicio++){
+
+                div_resultado.innerHTML += `${inicio}<br>`
+            }
+        } else if(inicio < 0) {
+
+            ipt_inicio.value = ``;
+            alert(`Ta muito engraçadinho ein Robin! Digite um número inicial maior ou igual a 0`)
+        } else {
+            
+            ipt_limite.value = ``;
+            alert(`Ta muito engraçadinho ein Robin! Digite um número limite menor que 100`)
+        }
+    }
+</script>

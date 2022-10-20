@@ -29,7 +29,13 @@
 
         for (var contador = 1 ; contador <= numero; contador++) {
 
-            div_resultado.innerHTML += `${contador} Força, foco, fé e foda-se<br>`
+            if (contador % 2 == 0){
+
+                div_resultado.innerHTML += `${contador} - Meu cú também<br>`
+            } else {
+                
+                div_resultado.innerHTML += `${contador} - Meu coração é seu<br>`
+            }
             // div_resultado.innerHTML += `glub<br>`;
         }
     }
