@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+</head>
+
+<body>
+
+    <p>Digite seu nome:</p>
+    <input type="text" id="ipt_nome" placeholder="Nome">
+    <p>Digite um número entre 1 e 100</p>
+    <input type="text" id="ipt_n1" placeholder="6">
+    <p>Digite segundo número entre 1 e 100</p>
+    <input type="text" id="ipt_n2" placeholder="6">
+    <p>Digite terceiro número entre 1 e 100</p>
+    <input type="text" id="ipt_n3" placeholder="6">
+
+    <button onclick="sortear()">Sortear</button>
+
+    <div>Número sorteado: <span id="span_numero"></span></div>
+</body>
+
+</html>
+
+<script>
+
+    var contador = 0;
+
+    function sortear(){
+
+        var nome = ipt_nome.value;
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        var n3 = Number(ipt_n3.value);
+        var sorteador = parseInt(1 + Math.random() * 100);
+
+        span_numero.innerHTML = `${sorteador}`;
+
+        if(sorteador == n1){
+
+            alert(`Parabéns, ${nome} o seu número da sorte ${n1} foi sorteado após ${contador} sorteios!”`);
+            contador = 0;
+            
+        } else if(sorteador == n2){
+            
+            alert(`Parabéns, ${nome} o seu número da sorte ${n2} foi sorteado após ${contador} sorteios!”`);
+            contador = 0; 
+        } else if(sorteador == n3){
+            
+            alert(`Parabéns, ${nome} o seu número da sorte ${n3} foi sorteado após ${contador} sorteios!”`);
+            contador = 0; 
+        } else {
+
+            contador++;
+        }
+
+    }
+</script>

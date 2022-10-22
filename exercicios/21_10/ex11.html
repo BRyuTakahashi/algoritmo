@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 11</title>
+</head>
+
+<body>
+
+    <button onclick="jogar()">Jogar</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function jogar(){
+        div_resultado.innerHTML = ``;
+
+        var n1 = parseInt(Math.random() * 3);
+        var n2 = parseInt(Math.random() * 3);
+        var pedra = `Pedra quebra a tesoura`;
+        var tesoura = `Tesoura corta o papel`;
+        var papel = `Papel cobre a pedra`;
+
+        if(n1 == 0){
+
+            div_resultado.innerHTML += `<img src="https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg" style="width: 100px;">    `;
+        } else if (n1 == 1){
+
+            div_resultado.innerHTML += `<img src="https://img.freepik.com/fotos-premium/papel-branco-amassado-e-amassado-em-branco_293060-3752.jpg?w=2000" style="width: 100px;">    `;
+        } else {
+
+            div_resultado.innerHTML += `<img src="https://www.maluli.com.br/octopus/design/images/145/products/o/tesoura-mundial-160.jpg" style="width: 100px;">    `;
+        }
+
+        if (n2 == 0){
+
+            div_resultado.innerHTML += `<img src="https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg" style="width: 100px;"><br>`;
+        } else if (n2 == 1){
+
+            div_resultado.innerHTML += `<img src="https://img.freepik.com/fotos-premium/papel-branco-amassado-e-amassado-em-branco_293060-3752.jpg?w=2000" style="width: 100px;"><br>`;
+        } else {
+
+            div_resultado.innerHTML += `<img src="https://www.maluli.com.br/octopus/design/images/145/products/o/tesoura-mundial-160.jpg" style="width: 100px;"><br>`;
+        }
+
+        if (n1 == n2){
+
+            div_resultado.innerHTML += `EMPATOU! Jogue novamente`;
+        } else if (n1 == 0 && n2 == 2){
+
+            div_resultado.innerHTML += `Jogador 1 venceu porque ${pedra}`;
+        } else if (n1 == 1 && n2 == 0){
+            
+            div_resultado.innerHTML += `Jogador 1 venceu porque ${papel}`;
+        } else if (n1 == 2 && n2 == 1){
+            
+            div_resultado.innerHTML += `Jogador 1 venceu porque ${tesoura}`;
+        } else if (n1 == 0 && n2 == 1){
+            
+            div_resultado.innerHTML += `Jogador 2 venceu porque ${papel}`;
+        } else if (n1 == 1 && n2 == 2){
+            
+            div_resultado.innerHTML += `Jogador 2 venceu porque ${tesoura}`;
+        } else {
+
+            div_resultado.innerHTML += `Jogador 2 venceu porque ${pedra}`;
+        }
+    }
+</script>

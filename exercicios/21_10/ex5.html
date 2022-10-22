@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerciico 5</title>
+</head>
+
+<body>
+
+    <button onclick="jogar()">Jo Ken Po</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function jogar(){
+
+        div_resultado.innerHTML = '';
+
+        var n1 = parseInt(Math.random() * 3);
+        var n2 = parseInt(Math.random() * 3);
+
+        if(n1 == 0){
+
+            div_resultado.innerHTML += `<img src="https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg" style="width: 100px;">`
+        } else if (n1 == 1){
+            
+            div_resultado.innerHTML += `<img src="https://img.freepik.com/fotos-premium/papel-branco-amassado-e-amassado-em-branco_293060-3752.jpg?w=2000" style="width: 100px;">`
+        } else {
+            
+            div_resultado.innerHTML += `<img src="https://www.maluli.com.br/octopus/design/images/145/products/o/tesoura-mundial-160.jpg" style="width: 100px;">`
+        }
+
+        if (n2 == 0){
+
+            div_resultado.innerHTML += `<img src="https://cdn.awsli.com.br/1634/1634422/produto/81748105/da9befcc58.jpg" style="width: 100px;">`
+        } else if (n2 == 1){
+            
+            div_resultado.innerHTML += `<img src="https://img.freepik.com/fotos-premium/papel-branco-amassado-e-amassado-em-branco_293060-3752.jpg?w=2000" style="width: 100px;">`
+        } else {
+            
+            div_resultado.innerHTML += `<img src="https://www.maluli.com.br/octopus/design/images/145/products/o/tesoura-mundial-160.jpg" style="width: 100px;">`
+        }
+    }
+</script>

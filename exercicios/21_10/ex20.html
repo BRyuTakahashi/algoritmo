@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+
+<body>
+
+    <div>Jogador 1: <span id="span_j1"></span></div>
+    <div>Jogador 2: <span id="span_j2"></span></div>
+    <div>Empate: <span id="span_empate"></span></div>
+    <div id="div_resultado"></div>
+    <br>
+    <button onclick="jogar()">Jogar</button>
+    <div>Dado 1: <span id="span_dado1"></span></div>
+    <div>Dado 2: <span id="span_dado2"></span></div>
+</body>
+
+</html>
+
+<script>
+
+    var j1 = 0;
+    var j2 = 0;
+    var empate = 0
+
+    function jogar(){
+
+        var sorteador1 = parseInt(1 + Math.random() * 6);
+        var sorteador2 = parseInt(1 + Math.random() * 6);
+
+        span_dado1.innerHTML = `${sorteador1}`;
+        span_dado2.innerHTML = `${sorteador2}`;
+
+        if(sorteador1 > sorteador2){
+
+            j1++;
+        } else if(sorteador1 < sorteador2){
+
+            j2++;
+        } else {
+
+            empate++;
+        }
+
+        span_j1.innerHTML = `${j1}`;
+        span_j2.innerHTML = `${j2}`;
+        span_empate.innerHTML = `${empate}`;
+
+        if(j1 > j2){
+
+            div_resultado.innerHTML = `O jogador 1 está vencendo`;
+        } else if(j1 < j2){
+
+            div_resultado.innerHTML = `O jogador 2 está vencendo`;
+        } else {
+
+            div_resultado.innerHTML = `Jogo empatado`;
+        }
+    }
+</script>

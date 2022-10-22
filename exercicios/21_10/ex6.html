@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+
+    <button onclick="sortear()">Sortear momento do dia</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function sortear(){
+
+        var numero = parseInt(Math.random() * 24);
+
+        div_resultado.innerHTML = `${numero}<br>`;
+
+        if(numero >= 0 && numero <= 11){
+
+            div_resultado.innerHTML += `Bom dia, flor do dia, são ${numero}`;
+        } else if (numero >= 12 && numero <= 17){
+
+            div_resultado.innerHTML += `Bom tarde, já vai tarde! São ${numero}`;
+        } else {
+
+            div_resultado.innerHTML += `Boa noite, durma bem! São ${numero}`;
+        }
+    }
+</script>

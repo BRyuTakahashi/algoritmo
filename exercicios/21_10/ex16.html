@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+
+<body>
+
+    <button onclick="ver()">Ver a Lua</button>
+    <div>Dia: <span id="span_dia"></span></div>
+    <img src="" alt="" id="img_src">
+</body>
+
+</html>
+
+<script>
+
+    function ver(){
+
+        var dia = parseInt(1 + Math.random() * 31);
+        span_dia.innerHTML = `${dia}`;
+
+        if(dia <= 7){
+
+            span_dia.innerHTML += ` Lua nova`;
+            img_src.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png`;
+
+        } else if (dia <= 16){
+
+            span_dia.innerHTML += ` Lua cheia`;
+            img_src.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png`;
+
+        } else if(dia <= 22){
+
+            span_dia.innerHTML += ` Lua Minguante`;
+            img_src.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png`;
+
+        } else {
+
+            span_dia.innerHTML += ` Lua Crescente`;
+            img_src.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png`;
+        }
+    }
+</script>

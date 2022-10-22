@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+
+    <button onclick="gerarNota()">Gerar nota de aluno entre 0 e 10</button>
+    <button onclick="gerarFrequencia()">Gerar frequencia de aluno entre 0 e 100</button>
+    <button onclick="aprovar()">Aprovado?</button>
+    <div id="div_nota"></div>
+    <div id="div_frequencia"></div>
+</body>
+
+</html>
+
+<script>
+
+    var nota = 0;
+    var frequencia = 0;
+
+    function gerarNota(){
+
+        var n = (Math.random() * 10);
+        nota = Number(n.toFixed(2));
+
+        div_nota.innerHTML = `Nota: ${nota}`;
+    }
+    function gerarFrequencia(){
+
+        var f = parseInt(Math.random() * 100);
+        frequencia = Number(f.toFixed(2))
+
+        div_frequencia.innerHTML = `Frequência: ${frequencia}%`;
+    }
+
+    function aprovar(){
+
+        div_nota.innerHTML = ``;
+        div_frequencia.innerHTML = ``;
+
+        if (nota >= 6 && frequencia >= 70){
+
+            alert(`Aluno aprovado!`);
+        } else{
+
+            alert(`Aluno reprovado!`);
+        }
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+
+    <button onclick="sortear()">Sortear Time</button><br>
+    <img src="" alt="" id="img_src" style="height: 150px;">
+</body>
+
+</html>
+
+<script>
+
+    function sortear(){
+
+        var numero = parseInt(Math.random() * 10);
+
+        if (numero >= 0 && numero < 3){
+
+            img_src.src = `https://upload.wikimedia.org/wikipedia/pt/b/b4/Corinthians_simbolo.png`;
+        } else if (numero > 2 && numero < 6) {
+            
+            img_src.src = `https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2026.png`;
+        } else if (numero > 5 && numero < 8){
+            
+            img_src.src = `https://a.espncdn.com/i/teamlogos/soccer/500/2029.png`;
+        } else {
+            
+            img_src.src = `https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png`;
+        }
+    }
+</script>
