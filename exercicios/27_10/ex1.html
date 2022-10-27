@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+
+    <p>Digite o seu número:</p>
+    <input type="text" id="ipt_numero">
+    <div id="div_resultado"></div>
+
+    <button onclick="testar()">Testar minha sorte</button>
+</body>
+
+</html>
+
+<script>
+
+    function testar(){
+
+        var div = div_resultado
+        
+        var contador = 0;
+        var numero = Number(ipt_numero.value);
+
+        while(true){
+            var sorteador = parseInt(Math.random() * 101);
+            contador++;
+
+            if(contador <= 20){
+
+                if(sorteador == numero){
+
+                    div.innerHTML = `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${contador}º sorteio`;
+                    break;
+                }
+            } else {
+
+                div.innerHTML = `É, você não tem muita sorte em sorteios, pelo visto`;
+                break;
+            }
+        }
+    }
+</script>

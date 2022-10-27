@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+
+<body>
+
+    <button onclick="sortear()">Ver minha sorte!</button>
+    <div id="div_img"></div>
+</body>
+
+</html>
+
+<script>
+
+    function sortear(){
+
+        var div = div_img
+        div.innerHTML = '';
+        var coracao = 0;
+        var carta = 0;
+        
+        for (var contador = 0; contador < 21; contador++) {
+            var sorteador = parseInt(Math.random() * 2);
+
+            if(sorteador % 2 == 0){
+
+                div.innerHTML += `<img src="https://static.wikia.nocookie.net/tudosobrehoradeaventura/images/1/1b/Ricardio_cora%C3%A7%C3%A3o.png/revision/latest?cb=20120828233454&path-prefix=pt-br" style=" width: 100px;">`
+                coracao++;
+            } else {
+
+                div.innerHTML += `<img src="https://static.wikia.nocookie.net/megamitensei/images/3/37/P5_Amantes.png/revision/latest?cb=20190623001009&path-prefix=pt-br" style=" width: 100px;">`
+                carta++;
+            }
+
+            if(coracao == 11){
+
+                div.innerHTML += `<br> Você tem mais sorte no amor`;
+                break;
+            } else if(carta == 11){
+
+                div.innerHTML += `<br> Você tem mais sorte no jogos`;
+                break;
+            }
+        }
+    }
+</script>

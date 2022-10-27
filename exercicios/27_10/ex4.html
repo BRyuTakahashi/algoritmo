@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+
+    <p>Escolha qual estúdio de quadrinhos é seu favorito</p>
+    <select id="sel_estudio">
+        <option value="marvel">Marvel</option>
+        <option value="dc">DC Comics</option>
+    </select>
+    <button onclick="exibir()">Ver programação semanal na TV</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function exibir(){
+
+        var estudio = sel_estudio.value;
+        var div = div_resultado;
+        div.innerHTML = '';
+
+        for(var contador = 0; contador < 5; contador++){
+
+            var sorteador = parseInt(Math.random() * 2);
+
+
+            if(sorteador % 2 == 0){
+
+                div.innerHTML += `<img src="https://img.elo7.com.br/product/original/2678F78/cartaz-poster-vingadores-4-ultimato-filme-marvel-avengers-colecionador.jpg" style="width: 100px;">`
+
+            } else {
+
+                div.innerHTML += `<img src="https://br.web.img3.acsta.net/pictures/210/057/21005782_20130514172205617.jpg" style="width: 100px;">`
+            }
+
+        }
+    }
+</script>

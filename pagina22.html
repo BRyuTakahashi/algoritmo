@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 22</title>
+</head>
+
+<body>
+
+    <h2>Cadastro de Frutas</h2>
+
+    <input type="text" id="ipt_frutas">
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div>
+        Total de frutas: <b id="b_total">0</b><br>
+        2 Fruta: <b id="b_segunda">0</b><br>
+        4 Fruta: <b id="b_quarta">0</b>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var frutas = [];
+    function cadastrar(){
+
+        frutas.push(ipt_frutas.value);
+        ipt_frutas.value = "";
+
+        b_total.innerHTML = frutas.length;
+        b_segunda.innerHTML = frutas[1];
+        b_quarta.innerHTML = frutas[3];
+    }
+</script>
