@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_frutas">
+    <button onclick="pesquisar()">Pesquisar frutas</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    var listaFrutas = ["morango", "laranja", "limão", "abacaxi", "melancia"];
+
+    function pesquisar(){
+
+        div_resultado.innerHTML = '';
+
+        var frutas = ipt_frutas.value;
+
+        if(frutas.indexOf(frutas) == 0){
+
+            div_resultado.innerHTML += `A fruta ${frutas} existe na lista`;
+        } else {
+            
+            div_resultado.innerHTML += `A fruta ${frutas} ainda não existe`;
+        }
+    };
+</script>

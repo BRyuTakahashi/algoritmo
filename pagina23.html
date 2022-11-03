@@ -21,6 +21,10 @@
         4 Fruta: <b id="b_quarta">0</b><br>
         Ultima Fruta <b id="b_ultima"></b>
     </div>
+    <br>
+    <input type="text" id="ipt_pesquisa" onkeyup="pesquisar()">
+    <div id="div_pesquisa"></div>
+
 </body>
 
 </html>
@@ -37,4 +41,16 @@
         b_quarta.innerHTML = frutas[3];
         b_ultima.innerHTML = frutas[frutas.length - 1];
     }
+
+    function pesquisar(){
+
+        var resultado = frutas.indexOf(ipt_pesquisa.value);
+
+        if(resultado < 0) {
+
+            div_pesquisa.innerHTML = `Não existe`;
+        } else{
+            div_pesquisa.innerHTML = `Esta na posição ${resultado}`;
+        }
+    };
 </script>

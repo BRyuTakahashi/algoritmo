@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+
+    Destino de viagem:
+    <input type="text" id="ipt_destino">
+    <button onclick="adicionar()">Adicionar</button><br><br>
+
+    <button onclick="primeira()">Primeira Viagem</button>
+    <button onclick="terceira()">Terceira Viagem</button>
+    <button onclick="ultima()">Última Viagem</button>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    var viagens = [];
+    function adicionar(){
+
+        var destino = ipt_destino.value;
+        viagens.push(destino);
+    }
+
+    function primeira(){
+
+        if(viagens.length >= 0){
+
+            div_resultado.innerHTML = viagens[0];
+        } else{
+
+            div_resultado.innerHTML = `Ainda não viajou`;
+        }
+    }
+    function terceira(){
+
+        if(viagens.length >= 0){
+
+            div_resultado.innerHTML = viagens[2];
+        } else{
+
+            div_resultado.innerHTML = `Ainda não viajou`;
+        }
+    }
+    function ultima(){
+
+        if(viagens.length >= 0){
+
+            div_resultado.innerHTML = viagens[viagens.length - 1];
+        } else{
+
+            div_resultado.innerHTML = `Ainda não viajou`;
+        }
+    }
+</script>

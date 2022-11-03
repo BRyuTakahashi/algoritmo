@@ -26,6 +26,8 @@
     function exibir(){
 
         var estudio = sel_estudio.value;
+        var marvel = 0;
+        var dc = 0;
         var div = div_resultado;
         div.innerHTML = '';
 
@@ -37,12 +39,23 @@
             if(sorteador % 2 == 0){
 
                 div.innerHTML += `<img src="https://img.elo7.com.br/product/original/2678F78/cartaz-poster-vingadores-4-ultimato-filme-marvel-avengers-colecionador.jpg" style="width: 100px;">`
-
+                marvel++
             } else {
 
                 div.innerHTML += `<img src="https://br.web.img3.acsta.net/pictures/210/057/21005782_20130514172205617.jpg" style="width: 100px;">`
+                dc++
             }
 
+            if(marvel > 0 || dc > 0){
+
+                if(estudio == 'marvel'){
+
+                    div.innerHTML += `<br> Você verá um filme da empresa que você gosta no ${contador} dia`;
+                } else {
+
+                    
+                }
+            }
         }
     }
 </script>

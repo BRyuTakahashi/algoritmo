@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+
+<body>
+
+    Rankeie o seus filmes favoritos:
+    <input type="text" id="ipt_filmes">
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    var filmes = [];
+
+    function cadastrar(){
+
+        filmes.push(ipt_filmes.value);
+
+        div_resultado.innerHTML = `Seu filme favorito: ${filmes[0]}<br>`;
+        if(filmes.length < 3){
+            
+            div_resultado.innerHTML += `Filmes não cadastrado<br>`
+        } else {
+            
+            div_resultado.innerHTML += `Seu terceiro filme favorito: ${filmes[2]}<br>`
+        }
+        div_resultado.innerHTML += `Filmes cadastrados: ${filmes.length}`
+    }
+</script>

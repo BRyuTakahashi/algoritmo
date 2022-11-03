@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Qual sobremesa comeu?<br>
+    <input type="text" id="ipt_sobremesas">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="mostrar()">Mostrar todas</button>
+    <button onclick="desafio1()">Desafio 1</button>
+    <button onclick="desafio2()">Desafio 2</button>
+    <div id="div_resultado"></div>
+    <br><br>
+
+    Pesquisa:
+    <input type="text" id="ipt_pesquisa" onkeyup="pesquisar()">
+    <div id="div_pesquisa"></div>
+
+</body>
+
+</html>
+<script>
+
+    var sobremesas = [];
+    function cadastrar() {
+
+        sobremesas.push(ipt_sobremesas.value);
+    }
+
+    function mostrar() {
+
+        div_resultado.innerHTML = '';
+
+        for(var indice = 0; indice < sobremesas.length; indice++){
+
+            var atual = sobremesas[indice];
+
+            div_resultado.innerHTML += `${indice + 1}. ${atual}<br>`;
+        }
+    }
+
+    function desafio1(){
+
+        div_resultado.innerHTML = "";
+
+        for(var indice = sobremesas.length - 1; indice >= 0; indice--){
+
+            var atual = sobremesas[indice];
+
+            div_resultado.innerHTML += `${indice + 1}. ${atual}<br>`;
+        }
+    }
+    function desafio2(){
+
+        div_resultado.innerHTML = '';
+
+        for(var indice = 0; indice < sobremesas.length; indice++){
+
+            var atual = sobremesas[indice];
+            var cor = 'black';
+
+            if(indice % 2 == 0){
+
+                cor = 'blue';
+            } 
+
+            div_resultado.innerHTML += `<span style="color: ${cor}">${indice + 1}. ${atual}</span><br>`;
+        }
+    }
+
+    function pesquisar(){
+
+        div_pesquisa.innerHTML = ``;
+        var pesquisa = ipt_pesquisa.value;
+        var qnt = 0;
+
+        for(var indice = 0; indice < sobremesas.length; indice++){
+
+            if(pesquisa == sobremesas[indice]){
+
+                qnt++;
+            }
+        }
+        if(qnt > 0){
+
+            div_pesquisa.innerHTML += `Você comeu ${pesquisa} ${qnt} vez(es)`;
+        } else {
+
+            div_pesquisa.innerHTML += `Você ainda não comeu ${pesquisa}`;
+        }
+        
+        /*if(resultado >= 0){
+
+            div_pesquisa.innerHTML += `Você comeu ${pesquisa} ${sobremesas.length} vez(es)`;
+        } else{
+            
+            div_pesquisa.innerHTML += `Não comeu ${pesquisa} ainda`;
+        }*/
+    };
+</script>
