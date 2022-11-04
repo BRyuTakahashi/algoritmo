@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 25</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_nome" placeholder="Insira o nome">
+    <input type="text" id="ipt_telefone" placeholder="Insira o telefone"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick=" exibir()">Exibir contato</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var contato = [];
+
+    function cadastrar(){
+
+        var pessoa = {
+
+            nome: ipt_nome.value,
+            telefone: ipt_telefone.value
+        }
+        contato.push(pessoa);
+    }
+
+    function exibir(){
+
+        div_resultado.innerHTML = ``
+        for(var indice = 0; indice < contato.length; indice++){
+
+            div_resultado.innerHTML += `Amigo ${indice + 1}: ${contato[indice].nome} com o telefone telefone ${contato[indice].telefone}<br>`
+        }
+    }
+</script>

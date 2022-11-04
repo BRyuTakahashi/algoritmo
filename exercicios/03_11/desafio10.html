@@ -39,18 +39,22 @@
 
     function pesquisar(){
 
-        var contador = 0;
+        var vezes = 0;
 
         for(var indice = 0; indice < onibus.length; indice++){
 
             if(ipt_linhaPega.value == onibus[indice]){
 
-                div_pesquisa.innerHTML = `Você já pegou essa linha ${indice + 1} vezes, nessa ordem: `;
-                
-            } else {
-
-                div_pesquisa.innerHTML = `Você nunca pegou essa linha`
+                vezes++;
             }
         }
+        if(vezes > 0){
+
+            div_pesquisa.innerHTML = `Você já pegou essa linha ${vezes} vezes, nessa ordem: `;
+        } else {
+
+            div_pesquisa.innerHTML = `Você nunca pegou essa linha`;
+        }
+        
     }
 </script>
