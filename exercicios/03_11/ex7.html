@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+
+    Cadastre seu filme favorito:
+    <input type="text" id="ipt_filmes"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var filmesSalvos = [];
+
+    function cadastrar(){
+
+        div_resultado.innerHTML = '';
+
+        filmesSalvos.push(ipt_filmes.value);
+        var cor = '';
+
+        for(var indice = 0; indice < filmesSalvos.length; indice++){
+
+            if(indice % 2 == 0){
+
+                cor = 'blue';
+            } else{
+
+                cor = 'red';
+            }
+            div_resultado.innerHTML += `<span style="color: ${cor}">${indice + 1}. ${filmesSalvos[indice]}</span><br>`;
+        }
+    }
+</script>

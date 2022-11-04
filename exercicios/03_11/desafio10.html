@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 10</title>
+</head>
+
+<body>
+
+    Registre as linhas ônibus que pega:
+    <input type="text" id="ipt_linhas"><br>
+    <button onclick="gravar()">Gravar busão</button>
+    <div id="div_resultado"></div>
+    <br><br>
+    <input type="text" id="ipt_linhaPega">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_pesquisa"></div>
+</body>
+
+</html>
+
+<script>
+
+    var onibus = [];
+
+    function gravar(){
+
+        div_resultado.innerHTML = '';
+        onibus.push(ipt_linhas.value);
+
+        for(var indice = onibus.length; indice > 0; indice--){
+
+            div_resultado.innerHTML += `${indice}. ${onibus[indice - 1]}<br>`;
+        }
+    }
+
+    function pesquisar(){
+
+        var contador = 0;
+
+        for(var indice = 0; indice < onibus.length; indice++){
+
+            if(ipt_linhaPega.value == onibus[indice]){
+
+                div_pesquisa.innerHTML = `Você já pegou essa linha ${indice + 1} vezes, nessa ordem: `;
+                
+            } else {
+
+                div_pesquisa.innerHTML = `Você nunca pegou essa linha`
+            }
+        }
+    }
+</script>

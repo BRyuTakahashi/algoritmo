@@ -23,16 +23,16 @@
 
     function pesquisar(){
 
-        div_resultado.innerHTML = '';
+        for(var indice = 0; indice < listaFrutas.length; indice++){
 
-        var frutas = ipt_frutas.value;
+            if(ipt_frutas.value == listaFrutas[indice]){
 
-        if(frutas.indexOf(frutas) == 0){
+                div_resultado.innerHTML = `A fruta ${ipt_frutas.value} existe na lista`;
+                break
+            } else {
 
-            div_resultado.innerHTML += `A fruta ${frutas} existe na lista`;
-        } else {
-            
-            div_resultado.innerHTML += `A fruta ${frutas} ainda não existe`;
+                div_resultado.innerHTML = `Não existe a fruta ${ipt_frutas.value} na lista`;
+            }
         }
-    };
+    }
 </script>

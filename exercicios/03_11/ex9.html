@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+
+<body>
+
+    Registre seus projetos:
+    <input type="text" id="ipt_projetos"><br>
+    <button onclick="cadastrar()">Registrar projetos</button>
+    <div id="div_resultado"></div>
+    <br><br>
+    <button onclick="mostrar()">Mostrar projetos</button>
+    <div id="div_projetos"></div>
+    
+</body>
+
+</html>
+
+<script>
+
+    var projetos = [];
+
+    function cadastrar(){
+
+        div_resultado.innerHTML = '';
+
+        projetos.push(ipt_projetos.value);
+
+        if(projetos.length < 5){
+
+            profissional = 'Júnior';
+        } else if (projetos.length < 13){
+
+            profissional = 'Pleno';
+        } else{
+
+            profissional = 'Sênior'
+        }
+        div_resultado.innerHTML += `Você já fez ${projetos.length} projetos. Por isso você é um profissional ${profissional} desde o projeto "${projetos[projetos.length - 1]}"`;
+    }
+
+    function mostrar(){
+
+        div_projetos.innerHTML = '';
+        for(var indice = projetos.length; indice > 0; indice--){
+
+            div_projetos.innerHTML += `${indice}. ${projetos[indice - 1]}<br>`;
+        }
+    }
+</script>
