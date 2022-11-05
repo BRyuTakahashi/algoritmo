@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+
+    Digite o nome do produto:
+    <input type="text" id="ipt_nome"><br>
+    Selecione a categoria do produto
+    <select id="sel_tipo">
+        <option value="">- selecione o tipo -</option>
+        <option value="geral">Geral</option>
+        <option value="alimento">Alimento</option>
+        <option value="eletronico">Eletrônico</option>
+    </select><br>
+    Digite o preço do produto:
+    <input type="text" id="ipt_preco"><br>
+    <button onclick="registrar()">Registrar produto</button>
+    <button onclick="verificar()">Verificar produtos</button>
+
+    <div id="div_resultado"></div>
+
+    <br><br>
+
+    <h3>Filtros</h3>
+
+    Pesquisar produto:
+    <input type="text" id="ipt_pesquisa">
+    <button onclick="procurar()">Procurar</button><br>
+    Pesquisar por tipo:
+    <select id="sel_tipo">
+        <option value="">- selecione o tipo -</option>
+        <option value="geral">Geral</option>
+        <option value="alimento">Alimento</option>
+        <option value="eletronico">Eletrônico</option>
+    </select>
+    <button onclick="filtrar()">Filtrar</button>
+    <div id="div_pesquisa"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista = [];
+
+    function registrar(){
+
+        var nome = ipt_nome.value;
+        var tipo = sel_tipo.value;
+        var preco = Number(ipt_preco.value);
+
+        if(nome == ''|| tipo == '' || preco == ''){
+
+            alert(`Verifique o preenchimento dos campos e tente novamente`);
+        } else {
+
+            var produto = {
+                nome,
+                tipo,
+                preco
+            }
+
+            lista.push(produto);
+        }
+    }
+
+    function verificar(){
+
+        if(lista.length == 0){
+
+            alert(`Não há produtos registrados na lista`);
+        } else{
+            
+            div_resultado.innerHTML = ``
+            for(var indice = 0; indice < lista.length; indice++){
+
+                div_resultado.innerHTML += `Produto: ${lista[indice].nome} <br> Preço: R$${lista[indice].preco}<br><br>`
+            }
+        }
+    }
+
+    function procurar(){
+        
+        div_pesquisa.innerHTML = '';
+        if(lista.length > 0){
+
+            var filtro = ipt_pesquisa.value;
+            var produtosFiltrados = [];
+
+            for(var indice = 0; indice < lista.length; indice++){
+
+                if(filtro == lista[indice].nome){
+                    produtosFiltrados.push(lista[indice]);
+                }
+            }
+
+            if(produtosFiltrados.length == 0){
+
+                alert(`Não há nenhum produto com este nome registrado!`);
+            } else {
+                
+                for(var indice = 0; indice < produtosFiltrados.length; indice++){
+
+                    div_pesquisa.innerHTML += `Produto: ${produtosFiltrados[indice].nome} <br> Tipo: ${produtosFiltrados[indice].tipo} <br> Preço: ${produtosFiltrados[indice].preco} <br><br>`;
+                }
+            }
+        } else {
+            
+            alert(`Não há nenhum produto com este nome registrado!`);
+        }
+    }
+
+    function filtrar(){
+        
+        div_pesquisa.innerHTML = '';
+        if(lista.length > 0){
+
+            var filtro = sel_tipo.value;
+            var produtosFiltrados = [];
+
+            for(var indice = 0; indice < lista.length; indice++){
+
+                if(filtro == lista[indice].tipo){
+                    produtosFiltrados.push(lista[indice]);
+                }
+            }
+
+            if(produtosFiltrados.length == 0){
+
+                alert(`Não há nenhum produto com este nome registrado!`);
+            } else {
+                
+                for(var indice = 0; indice < produtosFiltrados.length; indice++){
+
+                    div_pesquisa.innerHTML += `Produto: ${produtosFiltrados[indice].nome} <br> Tipo: ${produtosFiltrados[indice].tipo} <br> Preço: ${produtosFiltrados[indice].preco} <br><br>`;
+                }
+            }
+        } else {
+            
+            alert(`Não há nenhum produto com este nome registrado!`);
+        }
+    }
+</script>

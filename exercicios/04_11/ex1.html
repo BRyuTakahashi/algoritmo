@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+
+    Digite o nome do produto:
+    <input type="text" id="ipt_produto"><br>
+    Digite preço do produto:
+    <input type="text" id="ipt_preco"><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="verificar()">Verificar Produtos</button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista = [];
+
+    function registrar(){
+
+        var produto = ipt_produto.value;
+        var preco = Number(ipt_preco.value);
+
+        if(produto == '' || preco == ''){
+
+            alert(`Inválido! Verifique o preenchimento dos campos e tente novamente!`);
+        } else {
+
+            var produtos = {
+                produto,
+                preco
+
+            }
+            lista.push(produtos);
+        }
+    }
+
+    function verificar(){
+
+        if(lista.length == 0){
+
+            alert(`Não há produtos registrados na lista!`)
+        } else {
+            div_resultado.innerHTML = '';
+
+            for(var indice = 0; indice < lista.length; indice++){
+
+                div_resultado.innerHTML += `Produto${indice + 1}: ${lista[indice].produto} <br> Preço: R$${lista[indice].preco}<br><br>`
+            }
+        }
+    }
+</script>
