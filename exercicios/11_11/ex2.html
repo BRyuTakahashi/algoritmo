@@ -14,6 +14,18 @@
     <input type="text" id="ipt_nome" placeholder="Ex: Bruno">
     <button onclick="cadastrar()">Cadastrar</button>
     <button onclick="atualizar()">Atualizar Familia</button>
+    <div>Você tem <span id="span_filhos" style="font-weight: bold;">0</span> filhos</div>
+    <div>
+        Seu custo mensal será aproximadamente 
+        <span id="span_custoPart" style="font-weight: bold;">
+            R$0,0
+        </span>
+        se colocar ele(s) em escola particular ou 
+         <span id="span_custoPubl" style="font-weight: bold;">
+            R$0,0
+        </span>
+        se ele(s) estudarem em escola pública.
+    </div>
 </body>
 
 </html>
@@ -39,11 +51,20 @@
                 alert(`Não pode mais de 1 filho com o mesmo nome!`)
             }
         }
-
-        function atualizar(){
-
-            
-        }
-
     }
+
+    function atualizar(){
+
+        var qntFilhos = filhos.length;
+        var custoPart = Number(qntFilhos * 3000).toFixed(2);
+        var custoPubl = Number(qntFilhos * 1500).toFixed(2);
+
+        span_filhos.innerHTML = qntFilhos;
+        span_custoPart.innerHTML = `R$${custoPart}`;
+        span_custoPubl.innerHTML = `R$${custoPubl}`;
+
+        
+    }
+
+    
 </script>

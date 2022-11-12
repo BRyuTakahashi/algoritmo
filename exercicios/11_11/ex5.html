@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5</title>
+</head>
+
+<body>
+
+    <p>Nome do produto:</p>
+    <input type="text" id="ipt_nome" placeholder="Ex: Nutella">
+    <p>Preço de compra:</p>
+    <input type="text" id="ipt_preco" placeholder="Ex: 12.9">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_resultado"></div>
+    <div id="div_relatorio"></div>
+</body>
+
+</html>
+
+<script>
+    var estoque = [];
+    var maiorPreco = 0;
+    var prodBarato = '';
+    var menorPreco = 0;
+    var prodCaro = '';
+    
+    function cadastrar(){
+        
+        var precoTotal = 0;
+        var nome = ipt_nome.value;
+        var preco = Number(ipt_preco.value);
+        
+        estoque.push({
+            
+            nome,
+            preco
+        })
+        menorPreco = estoque[1].preco
+
+        div_resultado.innerHTML = `Total produtos: ${estoque.length}<br><br>`;
+
+        for(var i = 0; i < estoque.length; i++){
+
+            var produto = estoque[i];
+            precoTotal += estoque[i].preco;
+
+            div_resultado.innerHTML += `Produto ${i + 1}: ${produto.nome}<br>`
+            div_resultado.innerHTML += `Preco de compra: ${produto.preco}. Vende por: ${(produto.preco * 1.25).toFixed(2)}<br><br>`
+
+            if(produto.preco > maiorPreco){
+
+                maiorPreco = produto.preco;
+                prodCaro = produto.nome;
+            }
+
+            if(produto.preco < menorPreco){
+
+                menorPreco = produto.preco;
+                prodBarato = produto.nome;
+            }
+
+
+            div_relatorio.innerHTML = `Produto mais caro: ${prodCaro}<br>`;
+            div_relatorio.innerHTML += `Produto mais barato: ${prodBarato}<br>`;
+            div_relatorio.innerHTML += `Preço Total dos produtos registrados: ${precoTotal}<br>`;
+            div_relatorio.innerHTML += `Preço Médio dos produtos registrados: ${(precoTotal / estoque.length).toFixed(2)}`;
+        }
+
+
+        for(var i = 0; i < estoque.length; i++){
+
+
+        }
+    }
+
+</script>

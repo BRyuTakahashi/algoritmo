@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+
+    <p>Digite um número qualquer:</p>
+    <input type="text" id="ipt_numero" placeholder="Qualquer número">
+    <button onclick="analisar()">Analisar Histórico</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = [];
+    var maior = 0;
+    var menor = 0;
+
+    function analisar(){
+
+        div_resultado.innerHTML = ''; 
+        var numero = Number(ipt_numero.value);
+        menor = numero
+        lista.push(numero)
+
+        for(var i = 0; i < lista.length; i++){
+
+            div_resultado.innerHTML += `${i + 1}º Número: ${lista[i]}<br>`
+
+            if(lista[i] > maior){
+
+                maior = lista[i];
+            }
+            if(lista[i] < menor){
+
+                menor = lista[i];
+            }
+
+        }
+        div_resultado.innerHTML += `Maior: ${maior}<br>`
+        div_resultado.innerHTML += `Menor: ${menor}`
+    }
+</script>
