@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+
+    <h2>Análise de performance de Alunos - Registro</h2>
+    <br>
+    Entre com o Nome do Aluno:
+    <input type="text" id="ipt_nome"><br>
+    Entre com a Nota do Aluno:
+    <input type="text" id="ipt_nota" placeholder="0 a 10"><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+    <div id="div_resultado"></div>
+    <br><br>
+    <h2>Análise de performance de Alunos - Pesquisa</h2>
+    <br>
+    Entre com o intervalo de notas:
+    <input type="text" id="ipt_de" placeholder="De">
+    <input type="text" id="ipt_ate" placeholder="Ate"><br>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_pesquisa"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = [];
+
+    function registrar(){
+        
+        div_resultado.innerHTML = '';
+        var nome = ipt_nome.value;
+        var nota = Number(ipt_nota.value);
+
+        if(nome == '' || nota < 0 || nota > 10){
+
+            alert(`Insira os dados corretamente`);
+        } else {
+            lista.push({
+
+                nome,
+                nota
+            })
+        }
+
+        for(var i = lista.length; i > 0; i--){
+
+            div_resultado.innerHTML += `Aluno ${i}: ${lista[i - 1].nome}<br>`
+            div_resultado.innerHTML += `Nota: ${lista[i - 1].nota}<br><br>`
+        }
+    }
+
+    function analisar(){
+
+        div_resultado.innerHTML = '';
+        
+    }
+
+    function pesquisar(){
+        
+        var de = Number(ipt_de.value);
+        var ate = Number(ipt_ate.value);
+        var alunosListados = [];
+        var maiorNota = 0;
+        var menorNota = 0;
+        var mediaNota = 0;
+
+        if(de > ate){
+
+            alert(`Insira um número inicial menor que o número final`);
+        } else if(de < 0 || de > 10){
+            
+            alert(`Insira um número inicial entre 0 e 10`);
+        } else if ( ate < 0 || ate > 10){
+            
+            alert(`Insira um número final entre 0 e 10`);
+        } else {
+
+            for(var i = 0; i < lista.length; i++){
+                
+                var posicao = lista[i];
+                
+                if(posicao.nota >= de && posicao.nota <= ate){
+                    
+                    alunosListados.push(posicao);
+    
+                    if(menorNota == 0){
+
+                        menorNota = posicao.nota;
+                    } else{
+
+                        if(posicao.nota > maiorNota){
+
+                            maiorNota = posicao.nota
+                        }
+                        if(posicao.nota < menorNota){
+
+                            menorNota = posicao.nota
+                        }
+                    }
+                
+                mediaNota += posicao.nota;
+                } 
+            }
+        }
+        div_pesquisa.innerHTML = `Total de alunos registrado: ${lista.length}<br>`;
+        div_pesquisa.innerHTML += `Total de alunos listados: ${alunosListados.length}<br>`;
+        div_pesquisa.innerHTML += `Maior Nota: ${maiorNota}<br>`;
+        div_pesquisa.innerHTML += `Menor Nota: ${menorNota}<br>`;
+        if(mediaNota == 0){
+
+            div_pesquisa.innerHTML += `Média das Notas: 0`;
+        } else{
+
+            div_pesquisa.innerHTML += `Média das Notas: ${(mediaNota / alunosListados.length).toFixed(2)}`;
+        }
+    }
+
+
+</script>
