@@ -37,19 +37,13 @@
     function cadastrar(){
 
         var nome = ipt_nome.value;
-
-        if(filhos.length == 0){
-
-            filhos.push(nome)
+   
+        if(filhos.indexOf(nome) < 0){
+            
+            filhos.push(nome);
         } else{
             
-            if(filhos.indexOf(nome) < 0){
-                
-                filhos.push(nome)
-            } else{
-                
-                alert(`Não pode mais de 1 filho com o mesmo nome!`)
-            }
+            alert(`Não pode mais de 1 filho com o mesmo nome!`);
         }
     }
 
