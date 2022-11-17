@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_idade" placeholder="Digite sua idade" onkeyup="verificar()">
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar(){
+
+        var idade = Number(ipt_idade.value);
+        var pontos = 0;
+
+        var infancia = idade > 12 ? 'True' : 'False';
+        var adolescencia = idade > 18 ? 'True' : 'False';
+        var idoso = idade > 65 ? 'True' : 'False';
+
+        var pontos = infancia == 'True' ? pontos + 10 : pontos + 0
+        var pontos = adolescencia == 'True' ? pontos + 20 : pontos + 0
+        var pontos = idoso == 'True' ? pontos + 50 : pontos + 0
+
+        var pessoa = {
+            infancia,
+            adolescencia,
+            idoso,
+            pontos
+        }
+
+        div_resultado.innerHTML = `1. Já passou pela infância: ${pessoa.infancia}<br>`
+        div_resultado.innerHTML += `2. Já passou pela adolescencia: ${pessoa.adolescencia}<br>`
+        div_resultado.innerHTML += `3. Já é um idoso: ${pessoa.idoso}<br>`
+        div_resultado.innerHTML += `4. TOTAL DE PONTOS: ${pessoa.pontos}`
+    }
+</script>
