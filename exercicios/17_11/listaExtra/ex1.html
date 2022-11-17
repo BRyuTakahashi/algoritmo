@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_animal" placeholder="Digite o nome de um animal">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibir()">Relatório</button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var lista = []
+
+    function cadastrar(){
+
+        var animal = ipt_animal.value;
+
+        lista.push(animal);
+    }
+
+    function exibir(){
+
+        div_resultado.innerHTML = `Você cadastrou ${lista.length} animais:<br>`;
+        
+        for(var i = 0; i < lista.length; i++){
+            var repeticao = [];
+        
+            for(var indice = 0; indice < lista.length; indice++){
+
+                if(lista[i] == lista[indice]){
+
+                    repeticao.push(lista[i]);
+
+                }
+            }
+            if()
+            div_resultado.innerHTML += `"${lista[i]}": cadastrou ${repeticao.length} vezes<br>`;
+        }
+        
+    }
+</script>
