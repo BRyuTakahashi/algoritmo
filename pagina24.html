@@ -39,11 +39,11 @@
 
         div_resultado.innerHTML = '';
 
-        for(var indice = 0; indice < sobremesas.length; indice++){
+        for(var i = 0; i < sobremesas.length; i++){
 
-            var atual = sobremesas[indice];
+            var atual = sobremesas[i];
 
-            div_resultado.innerHTML += `${indice + 1}. ${atual}<br>`;
+            div_resultado.innerHTML += `${i + 1}. ${atual}<br>`;
         }
     }
 
@@ -51,28 +51,28 @@
 
         div_resultado.innerHTML = "";
 
-        for(var indice = sobremesas.length - 1; indice >= 0; indice--){
+        for(var i = sobremesas.length - 1; i >= 0; i--){
 
-            var atual = sobremesas[indice];
+            var atual = sobremesas[i];
 
-            div_resultado.innerHTML += `${indice + 1}. ${atual}<br>`;
+            div_resultado.innerHTML += `${i + 1}. ${atual}<br>`;
         }
     }
     function desafio2(){
 
         div_resultado.innerHTML = '';
 
-        for(var indice = 0; indice < sobremesas.length; indice++){
+        for(var i = 0; i < sobremesas.length; i++){
 
-            var atual = sobremesas[indice];
+            var atual = sobremesas[i];
             var cor = 'black';
 
-            if(indice % 2 == 0){
+            if(i % 2 == 0){
 
                 cor = 'blue';
             } 
 
-            div_resultado.innerHTML += `<span style="color: ${cor}">${indice + 1}. ${atual}</span><br>`;
+            div_resultado.innerHTML += `<span style="color: ${cor}">${i + 1}. ${atual}</span><br>`;
         }
     }
 
@@ -81,10 +81,26 @@
         div_pesquisa.innerHTML = ``;
         var pesquisa = ipt_pesquisa.value;
         var qnt = 0;
+        
+        if(sobremesas.indexOf(pesquisa) < 0){
+            
+            div_pesquisa.innerHTML += `Você ainda não comeu ${pesquisa}`;
+        } else{
+            for(var i = 0; i < sobremesas.length; i++){
+                
+                if(pesquisa == sobremesas[i]){
+                    qnt++
+                    
+                }
+            }
+            div_pesquisa.innerHTML += `Você comeu ${pesquisa} ${sobremesas.length} vez(es)`;
+        }
+        
+        /*var qnt = 0;
 
-        for(var indice = 0; indice < sobremesas.length; indice++){
+        for(var i = 0; i < sobremesas.length; i++){
 
-            if(pesquisa == sobremesas[indice]){
+            if(pesquisa == sobremesas[i]){
 
                 qnt++;
             }
@@ -95,7 +111,7 @@
         } else {
 
             div_pesquisa.innerHTML += `Você ainda não comeu ${pesquisa}`;
-        }
+        }*/
         
         /*if(resultado >= 0){
 
