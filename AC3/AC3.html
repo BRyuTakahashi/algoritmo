@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova AC3</title>
+</head>
+
+<body>
+
+    <div style="font-weight: bold;">Pontos Jogador: <span id="span_jogador">0</span></div>
+    <div style="font-weight: bold;">Pontos Adversario: <span id="span_adversario">0</span></div>
+    <button onclick="simular()">Simular Batalha</button>
+    <div>Baralho Jogador:</div>
+    <div id="div_baralhoJogador"></div>
+
+    <div>Baralho Adversario:</div>
+    <div id="div_baralhoAdversario"></div>
+    <br><br>
+    <div id="div_resultado"></div>
+    <div id="div_cartas"></div>
+    <div id="div_final"></div>
+</body>
+
+</html>
+
+<script>
+
+    var capitao = {
+        imagem : './imagens/capitao_america.png', 
+        poder : 3, 
+        vida: 3
+    };
+    var deadpool = {
+        imagem : './imagens/deadpool.png',
+        poder : 1,
+        vida : 1
+    };
+    var homemDeFerro = {
+        imagem : './imagens/homem_de_ferro.png',
+        poder: 5,
+        vida: 0
+    };
+    var mercurio = {
+        imagem : './imagens/mercurio.png',
+        poder: 1,
+        vida : 2
+    };
+    var mulherInvisivel = {
+        imagem : './imagens/mulher_invisivel.png',
+        poder : 2,
+        vida : 2
+    };
+    var srFantastico = {
+        imagem: './imagens/sr_fantastico.png',
+        poder:  3,
+        vida : 3
+    };
+    var thor = {
+        imagem : './imagens/thor.png',
+        poder : 3,
+        vida : 2
+    };
+    var venom = {
+        imagem : './imagens/venom.png',
+        poder : 3,
+        vida : 1
+    };
+    var viuva = {
+        imagem : './imagens/viuva_negra.png',
+        poder : 2,
+        vida : 1
+    };
+    var wolverine = {
+        imagem :'./imagens/wolverine.png',
+        poder : 2,
+        vida : 3
+    };
+    
+    var cartas = [capitao, deadpool, homemDeFerro, mercurio, mulherInvisivel, srFantastico, thor, venom, viuva, wolverine];
+    var jogador = [];
+    var adversario = [];
+    
+    // separador do jogador
+    for(var i = 0; i < 5; i++){
+
+        while(true){
+            
+            var geradorJ = parseInt(Math.random() * 10);
+            
+            if(jogador.indexOf(cartas[geradorJ]) < 0){
+                jogador.push(cartas[geradorJ]);
+                break
+            }
+        }
+        div_baralhoJogador.innerHTML += `<img src="${jogador[i].imagem}" style="width: 120px">`
+    }
+    
+    // separador do adversario
+    for(var i = 0; i < 5; i++){
+
+        while(true){
+            
+            var geradorA = parseInt(Math.random() * 10);
+            
+            if(adversario.indexOf(cartas[geradorA]) < 0){
+                adversario.push(cartas[geradorA]);
+                break;
+            }
+        }
+        div_baralhoAdversario.innerHTML += `<img src="${adversario[i].imagem}" style="width: 120px">`
+    }
+    
+    
+    var repetirJ = [];
+    var repetirA = [];
+    var contador = 0;
+    var pontosJ = 0;
+    var pontosA = 0;
+
+    function simular(){
+        
+        while(true){
+
+            var geradorJ = parseInt(Math.random() * 5);
+            
+            if(repetirJ.indexOf(geradorJ) < 0){
+                
+                repetirJ.push(geradorJ)
+                console.log(jogador[repetirJ[contador]].poder)
+                console.log(jogador[repetirJ[contador]].vida)
+                break;
+            }
+        }
+        
+        while(true){
+            
+            var geradorA = parseInt(Math.random() * 5);
+            
+            if(repetirA.indexOf(geradorA) < 0){
+                
+                repetirA.push(geradorA)
+                console.log(adversario[repetirA[contador]].poder)
+                console.log(adversario[repetirA[contador]].vida)
+                break;
+            }
+        }
+        
+        var vida1 = jogador[repetirJ[contador]].poder - adversario[repetirA[contador]].vida
+        var vida2 = adversario[repetirA[contador]].poder - jogador[repetirJ[contador]].vida;
+        
+        if(vida1 > vida2){
+
+            pontosJ += 3;
+            div_resultado.innerHTML = `<span style="color: green;">O jogador venceu</span>`
+        } else if(vida1 < vida2){
+            
+            pontosA += 3;
+            div_resultado.innerHTML = `<span style="color: red;">O adversario venceu</span>`
+        } else{
+            
+            pontosJ += 1;
+            pontosA += 1;
+            div_resultado.innerHTML = `<span style="color: blue;">Houve um empate</span>`
+        }
+        
+        div_cartas.innerHTML = `<img src="${jogador[repetirJ[contador]].imagem}" style="width: 160px">`
+        div_cartas.innerHTML += `<img src="${adversario[repetirA[contador]].imagem}" style="width: 160px">`
+        
+        span_jogador.innerHTML = `${pontosJ}`
+        span_adversario.innerHTML = `${pontosA}`
+        
+        contador++
+        
+        if(contador == 5){
+
+            if(pontosJ > pontosA){
+                
+                div_final.innerHTML = `<span style="color: green; font-size:48px">O jogador é o grande vencedor com ${pontosJ} pontos</span>`
+            } else if(pontosJ < pontosA){
+            
+                div_final.innerHTML = `<span style="color: red; font-size:48px">O adversario é o grande vencedor com ${pontosA} pontos</span>`
+            } else{
+                
+                div_final.innerHTML = `<span style="color: blue; font-size:48px">Oloco Meo! Ambos são igualmente bons!</span>`
+            }
+        }
+    }
+</script>
