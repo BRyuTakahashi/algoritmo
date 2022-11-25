@@ -88,10 +88,10 @@
 
         while(true){
             
-            var geradorJ = parseInt(Math.random() * 10);
+            var gerador = parseInt(Math.random() * 10);
             
-            if(jogador.indexOf(cartas[geradorJ]) < 0){
-                jogador.push(cartas[geradorJ]);
+            if(jogador.indexOf(cartas[gerador]) < 0){
+                jogador.push(cartas[gerador]);
                 break
             }
         }
@@ -103,10 +103,10 @@
 
         while(true){
             
-            var geradorA = parseInt(Math.random() * 10);
+            var gerador = parseInt(Math.random() * 10);
             
-            if(adversario.indexOf(cartas[geradorA]) < 0){
-                adversario.push(cartas[geradorA]);
+            if(adversario.indexOf(cartas[gerador]) < 0){
+                adversario.push(cartas[gerador]);
                 break;
             }
         }
@@ -122,70 +122,74 @@
 
     function simular(){
         
-        while(true){
+        if(contador < 5){
 
-            var geradorJ = parseInt(Math.random() * 5);
-            
-            if(repetirJ.indexOf(geradorJ) < 0){
+            while(true){
+        
+                var gerador = parseInt(Math.random() * 5);
                 
-                repetirJ.push(geradorJ)
-                console.log(jogador[repetirJ[contador]].poder)
-                console.log(jogador[repetirJ[contador]].vida)
-                break;
+                if(repetirJ.indexOf(gerador) < 0){
+                    
+                    repetirJ.push(gerador);
+                    console.log(jogador[repetirJ[contador]].poder);
+                    console.log(jogador[repetirJ[contador]].vida);
+                    break;
+                }
             }
-        }
-        
-        while(true){
             
-            var geradorA = parseInt(Math.random() * 5);
-            
-            if(repetirA.indexOf(geradorA) < 0){
+            while(true){
                 
-                repetirA.push(geradorA)
-                console.log(adversario[repetirA[contador]].poder)
-                console.log(adversario[repetirA[contador]].vida)
-                break;
+                var gerador = parseInt(Math.random() * 5);
+                
+                if(repetirA.indexOf(gerador) < 0){
+                    
+                    repetirA.push(gerador)
+                    console.log(adversario[repetirA[contador]].poder)
+                    console.log(adversario[repetirA[contador]].vida)
+                    break;
+                }
             }
-        }
-        
-        var vida1 = jogador[repetirJ[contador]].poder - adversario[repetirA[contador]].vida
-        var vida2 = adversario[repetirA[contador]].poder - jogador[repetirJ[contador]].vida;
-        
-        if(vida1 > vida2){
-
-            pontosJ += 3;
-            div_resultado.innerHTML = `<span style="color: green;">O jogador venceu</span>`
-        } else if(vida1 < vida2){
             
-            pontosA += 3;
-            div_resultado.innerHTML = `<span style="color: red;">O adversario venceu</span>`
-        } else{
+            var vida1 = jogador[repetirJ[contador]].poder - adversario[repetirA[contador]].vida
+            var vida2 = adversario[repetirA[contador]].poder - jogador[repetirJ[contador]].vida;
             
-            pontosJ += 1;
-            pontosA += 1;
-            div_resultado.innerHTML = `<span style="color: blue;">Houve um empate</span>`
-        }
+            if(vida1 > vida2){
         
-        div_cartas.innerHTML = `<img src="${jogador[repetirJ[contador]].imagem}" style="width: 160px">`
-        div_cartas.innerHTML += `<img src="${adversario[repetirA[contador]].imagem}" style="width: 160px">`
-        
-        span_jogador.innerHTML = `${pontosJ}`
-        span_adversario.innerHTML = `${pontosA}`
-        
-        contador++
-        
-        if(contador == 5){
-
-            if(pontosJ > pontosA){
+                pontosJ += 3;
+                div_resultado.innerHTML = `<span style="color: green;">O jogador venceu</span>`
+            } else if(vida1 < vida2){
                 
-                div_final.innerHTML = `<span style="color: green; font-size:48px">O jogador é o grande vencedor com ${pontosJ} pontos</span>`
-            } else if(pontosJ < pontosA){
-            
-                div_final.innerHTML = `<span style="color: red; font-size:48px">O adversario é o grande vencedor com ${pontosA} pontos</span>`
+                pontosA += 3;
+                div_resultado.innerHTML = `<span style="color: red;">O adversario venceu</span>`
             } else{
                 
-                div_final.innerHTML = `<span style="color: blue; font-size:48px">Oloco Meo! Ambos são igualmente bons!</span>`
+                pontosJ += 1;
+                pontosA += 1;
+                div_resultado.innerHTML = `<span style="color: blue;">Houve um empate</span>`
             }
+            
+            div_cartas.innerHTML = `<img src="${jogador[repetirJ[contador]].imagem}" style="width: 160px">`
+            div_cartas.innerHTML += `<img src="${adversario[repetirA[contador]].imagem}" style="width: 160px">`
+            
+            span_jogador.innerHTML = `${pontosJ}`
+            span_adversario.innerHTML = `${pontosA}`
+            
+            contador++
+
+            if(contador == 5){
+
+                if(pontosJ > pontosA){
+                    
+                    div_final.innerHTML = `<span style="color: green; font-size:48px">O jogador é o grande vencedor com ${pontosJ} pontos</span>`
+                } else if(pontosJ < pontosA){
+                
+                    div_final.innerHTML = `<span style="color: red; font-size:48px">O adversario é o grande vencedor com ${pontosA} pontos</span>`
+                } else{
+                    
+                    div_final.innerHTML = `<span style="color: blue; font-size:48px">Oloco Meo! Ambos são igualmente bons!</span>`
+                }
+            }
+
         }
     }
 </script>
